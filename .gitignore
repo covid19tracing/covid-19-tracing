@@ -1,2 +1,4 @@
 # prevent to accidentally upload private histories
 *Location History.json
+node_modules
+package-lock.json

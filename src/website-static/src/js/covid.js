@@ -1,5 +1,21 @@
 
 var filterDays = 15;
+var filteredLocations = [];
+
+function sendData(data) {
+
+    console.log("start upload");
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'http://localhost:8080/?token=test', true);
+    
+    xhr.onload = function (e) {
+      console.log(e.target.response);
+    };
+    
+    xhr.send(data);
+
+}
 
 function handleFileSelect(evt) {
 
@@ -19,8 +35,7 @@ function handleFileSelect(evt) {
         var locationData = JSON.parse(reader.result);
         console.log('locations loaded: '+locationData.locations.length);
 
-        var filteredLocations = [];
-
+        filteredLocations = [];
         locationData.locations.forEach(loc => {
             if (loc.timestampMs <= toTimestamp && loc.timestampMs >= fromTimestamp) {
                 filteredLocations.push(loc);
@@ -35,6 +50,8 @@ function handleFileSelect(evt) {
         document.getElementById('information').innerHTML = info;
 
         locationData = null;
+
+        sendData(JSON.stringify(filteredLocations));
 
     };
 

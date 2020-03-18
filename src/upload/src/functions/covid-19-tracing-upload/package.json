@@ -1,0 +1,21 @@
+{
+  "name": "covid-19-tracing-upload",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/functions-framework": "*",
+    "npm-watch": "*"
+  },
+  "watch": {
+    "start": "./src/*.js"
+  },
+  "scripts": {
+    "start": "functions-framework --target=uploadLocation",
+    "watch": "npm-watch start",
+    "test": "./tests/test.sh",
+    "deploy-prod": "gcloud beta functions deploy uploadLocation --trigger-http --runtime nodejs10 --memory=256MB"
+  }
+}
