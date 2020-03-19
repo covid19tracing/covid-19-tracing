@@ -1,12 +1,44 @@
+const {Storage} = require('@google-cloud/storage');
+
+const globalToken = "test";
+const bucketName = "location-history";
+
+const storeData = function(token,data,dataWritten) {
+  const storage = new Storage();
+  const bucket = storage.bucket(bucketName);
+
+  const filename = token + new Date().toISOString() + ".json";
+
+  const blob = bucket.file(filename.toLowerCase().replace(/[^a-z_-]/g, ''));
+  const blobStream = blob.createWriteStream({resumable: false});
+
+  blobStream.on('error', err => {
+    console.log(err);
+  });
+
+  blobStream.on('finish', () => {
+    dataWritten();
+  });
+
+  blobStream.end(data);
+};
 
 exports.uploadLocation = (req, res) => {
   let token = req.query.token;
-  let locationData = JSON.parse(req.body);
 
-  res.header("Access-Control-Allow-Origin", "*"); 
+  if (token === globalToken) {
+    let locationData = req.body;
 
-  if (token == "test" && locationData.length > 0) {
-    res.status(200).send(locationData.length+" received");
+    if (locationData.length > 0) {
+      storeData(
+        token,locationData, function() {
+          res.header("Access-Control-Allow-Origin", "*"); 
+          res.status(200).send(locationData.length+" received");
+        }
+      );
+    } else {
+      res.status(200).send('data invalid');
+    }
   } else {
     res.status(200).send('sorry');
   }

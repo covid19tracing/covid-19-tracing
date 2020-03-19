@@ -1,12 +1,15 @@
 {
   "name": "covid-19-tracing-upload",
   "version": "1.0.0",
-  "description": "",
+  "description": "Upload Function for location history data",
   "main": "src/index.js",
-  "author": "",
-  "license": "ISC",
+  "author": "Wolfgang Gassler",
+  "license": "GPL v.3",
   "dependencies": {
-    "@google-cloud/functions-framework": "*",
+    "@google-cloud/functions-framework": "^1.5",
+    "@google-cloud/storage": "^4.6"
+  },
+  "devDependencies": {
     "npm-watch": "*"
   },
   "watch": {
@@ -16,6 +19,6 @@
     "start": "functions-framework --target=uploadLocation",
     "watch": "npm-watch start",
     "test": "./tests/test.sh",
-    "deploy-prod": "gcloud beta functions deploy uploadLocation --trigger-http --runtime nodejs10 --memory=256MB"
+    "deploy-prod": "gcloud --project covid-19-tracing beta functions deploy uploadLocation --trigger-http --runtime nodejs10 --memory=256MB"
   }
 }
