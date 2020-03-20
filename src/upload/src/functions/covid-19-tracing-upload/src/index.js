@@ -9,7 +9,7 @@ const storeData = function(token,data,dataWritten) {
 
   const filename = token + new Date().toISOString() + ".json";
 
-  const blob = bucket.file(filename.toLowerCase().replace(/[^a-z\._-]/g, '_'));
+  const blob = bucket.file(filename.toLowerCase().replace(/[^a-z0-9\._-]/g, '_'));
   const blobStream = blob.createWriteStream({resumable: false});
 
   blobStream.on('error', err => {
