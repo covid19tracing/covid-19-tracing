@@ -1,9 +1,37 @@
 <html>
 
 <body>
-<div>Positive tested: <input type="date" id="tested" name="tested" value="2020-03-08"></div>
-<div>Google Takeout Location.json: <input type="file" id="file" name="file" /></div>
-<div id="information"></div>
+
+<style>
+    .hidden {
+        display: none;
+    }
+    div {
+        padding: 1em;
+    }
+</style>
+
+<div>Please upload your <a href="https://takeout.google.com">Google Takeout Data</a> here.
+We are only uploading several days of your location history. The data is already filtered on your
+computer and only a couple of days of data will leave your computer. We will ask you again before uploading
+any data!</div>
+
+<div>When have you been positively tested? <input type="date" id="testedDate" name="tested" value=""></div>
+
+<div id="symptoms" class="hidden">
+    When have you experienced your first symptoms? <input type="date" id="symptomsDate" name="symptoms" value=""><br>
+    <input type="checkbox" id="nosymptoms" name="nosymptoms" value="nosymptoms" /> I haven't experienced any symptoms.
+</div>
+
+<div id="daterangeinfo"></div>
+
+<div id="uploadfield" class="hidden">Select your Google file <b>Takeout Location.json</b>: <input type="file" id="file" name="file" /></div>
+
+<div id="filteredinformation"></div>
+
+<div id="upload" class="hidden"><input type="button" id="uploadButton" name="upload" value="Upload data in date range to server"></div>
+
+<div id="uploadinformation"></div>
 
 <script src="js/covid.js"></script>
 
