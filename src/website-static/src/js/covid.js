@@ -51,7 +51,7 @@ function handleFileSelect(evt) {
         locationData = null;
 
         document.getElementById('upload').classList.remove("hidden");
-        document.getElementById('uploadButton').value = "Upload "+filteredLocations.length+" location data to server..."
+        document.getElementById('cf-submit').value = "Upload "+filteredLocations.length+" location data to server..."
 
     };
 
@@ -117,4 +117,4 @@ document.getElementById('testedDate').addEventListener('change', handleTested, f
 document.getElementById('symptomsDate').addEventListener('change', handleSymptoms, false);
 document.getElementById('nosymptoms').addEventListener('change', handleSymptoms, false);
 document.getElementById('file').addEventListener('change', handleFileSelect, false);
-document.getElementById('uploadButton').addEventListener('click', handleUpload, false);
+document.getElementById('cf-submit').addEventListener('click', handleUpload, false);
