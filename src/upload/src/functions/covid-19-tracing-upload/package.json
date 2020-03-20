@@ -18,7 +18,6 @@
   "scripts": {
     "start": "functions-framework --target=uploadLocation",
     "watch": "npm-watch start",
-    "test": "./tests/test.sh",
-    "deploy-prod": "gcloud --project covid-19-tracing beta functions deploy uploadLocation --trigger-http --runtime nodejs10 --memory=256MB"
+    "test": "./tests/test.sh"
   }
 }

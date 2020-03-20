@@ -13,6 +13,17 @@ help: ## help message, list all command
 run:  ## run the function
 	npm start
 
+.PHONY: deploy-prod
+deploy-prod:  ## deploy function to google cloud production
+	gcloud --project covid-19-tracing \
+	beta functions deploy uploadLocation \
+	--region europe-west3 \
+	--trigger-http \
+	--runtime nodejs10 \
+	--memory=256MB \
+	--timeout=400
+	
+
 .PHONY: watch-run
  watch-run:  ## run and watch code changes for the function
 	npm run watch
