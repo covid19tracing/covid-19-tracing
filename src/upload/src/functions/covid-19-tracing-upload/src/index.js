@@ -33,7 +33,7 @@ exports.uploadLocation = (req, res) => {
       storeData(
         token,locationData, function() {
           res.header("Access-Control-Allow-Origin", "*"); 
-          res.status(200).send(locationData.length+" received");
+          res.status(200).send(locationData.length+" bytes received, thanks");
         }
       );
     } else {
