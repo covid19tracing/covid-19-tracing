@@ -5,3 +5,10 @@
     border-radius: 50%;
     display: inline-block;
   }
+
+
+@media (max-width:629px) {
+    .uploadImage {
+      display: none !important;
+    }
+}
