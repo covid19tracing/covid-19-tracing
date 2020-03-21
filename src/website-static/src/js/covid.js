@@ -50,8 +50,13 @@ function handleFileSelect(evt) {
 
         locationData = null;
 
-        document.getElementById('upload').classList.remove("hidden");
-        document.getElementById('cf-submit').value = "Upload "+filteredLocations.length+" location data to server..."
+        if (filteredLocations.length == 0) {
+            document.getElementById('filteredinformation').innerHTML =
+                document.getElementById('filteredinformation').innerHTML + " ... sorry, nothing to upload.";
+        } else {
+            document.getElementById('upload').classList.remove("hidden");
+            document.getElementById('cf-submit').innerHTML = "Upload "+filteredLocations.length+" location data to server..."
+        }
 
     };
 
