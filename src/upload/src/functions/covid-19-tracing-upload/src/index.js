@@ -1,13 +1,15 @@
 const {Storage} = require('@google-cloud/storage');
+const Token = require('./token');
 
-const globalToken = "test";
-const bucketName = "location-history";
+const locationHistoryBucketName = "covid-19-tracing-location-history";
+
+const storage = new Storage();
+const bucket = storage.bucket(locationHistoryBucketName);
 
 const storeData = function(token,data,dataWritten) {
-  const storage = new Storage();
-  const bucket = storage.bucket(bucketName);
+  
 
-  const filename = token + new Date().toISOString() + ".json";
+  const filename = token + "_" + new Date().toISOString() + ".json";
 
   const blob = bucket.file(filename.toLowerCase().replace(/[^a-z0-9\._-]/g, '_'));
   const blobStream = blob.createWriteStream({resumable: false});
@@ -26,7 +28,7 @@ const storeData = function(token,data,dataWritten) {
 exports.uploadLocation = (req, res) => {
   let token = req.query.token;
 
-  if (token === globalToken) {
+  Token.isValid(token).then(function() {
     let locationData = req.body;
 
     if (locationData.length > 0) {
@@ -39,8 +41,8 @@ exports.uploadLocation = (req, res) => {
     } else {
       res.status(200).send('data invalid');
     }
-  } else {
+  }, function() {
     res.status(200).send('sorry');
-  }
+  });
 
 };

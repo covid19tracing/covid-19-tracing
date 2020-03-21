@@ -9,7 +9,7 @@ function sendData(data) {
     console.log("start upload" + data);
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://europe-west3-covid-19-tracing.cloudfunctions.net/uploadLocation?token=test', true);
+    xhr.open('POST', 'https://europe-west3-covid-19-tracing.cloudfunctions.net/uploadLocation?token=Qua0Fi', true);
     
     xhr.onload = function (e) {
       console.log(e.target.response);
