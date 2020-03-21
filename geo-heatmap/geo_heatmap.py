@@ -25,6 +25,9 @@ class Generator:
         self.low_location_accuracy = 5000
         self.min_activity_confidence = 50
         self.accepted_activities = ["STILL", "WALKING"]
+        self.frequent_coordinates = []
+        self.coordinate_accuracy = 3
+        self.max_acceptable_magnitude = 400
 
     def loadJSONData(self, json_file, date_range):
         """Loads the Google location data from the given json file.
@@ -50,8 +53,8 @@ class Generator:
                     if activity not in self.accepted_activities or activity_confidence < self.min_activity_confidence:
                         continue
 
-                coords = (round(loc["latitudeE7"] / 1e7, 6),
-                           round(loc["longitudeE7"] / 1e7, 6))
+                coords = (round(loc["latitudeE7"] / 1e7, self.coordinate_accuracy),
+                           round(loc["longitudeE7"] / 1e7, self.coordinate_accuracy))
 
                 if timestampInRange(loc["timestampMs"], date_range):
                     self.updateCoord(coords)
@@ -76,8 +79,8 @@ class Generator:
             for i, loc in enumerate(locations):
                 if "latitudeE7" not in loc or "longitudeE7" not in loc:
                     continue
-                coords = (round(loc["latitudeE7"] / 1e7, 6),
-                            round(loc["longitudeE7"] / 1e7, 6))
+                coords = (round(loc["latitudeE7"] / 1e7, self.coordinate_accuracy),
+                            round(loc["longitudeE7"] / 1e7, self.coordinate_accuracy))
 
                 if timestampInRange(loc["timestampMs"], date_range):
                     self.updateCoord(coords)
@@ -170,6 +173,13 @@ class Generator:
                 .format(file_name))
 
     def updateCoord(self, coords):
+        if self.coordinates[coords] > self.max_acceptable_magnitude:
+            self.frequent_coordinates.append(coords)
+
+        if coords in self.frequent_coordinates:
+            self.coordinates[coords] = 0
+            return
+
         self.coordinates[coords] += 1
         if self.coordinates[coords] > self.max_magnitude:
             self.max_coordinates = coords
@@ -195,6 +205,7 @@ class Generator:
                     for coords, magnitude in self.coordinates.items()]
 
         # Generate map
+        print(self.frequent_coordinates)
         m = folium.Map(location=self.max_coordinates,
                        zoom_start=zoom_start,
                        tiles=tiles)
