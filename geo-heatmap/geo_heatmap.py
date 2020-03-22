@@ -205,7 +205,6 @@ class Generator:
                     for coords, magnitude in self.coordinates.items()]
 
         # Generate map
-        print(self.frequent_coordinates)
         m = folium.Map(location=self.max_coordinates,
                        zoom_start=zoom_start,
                        tiles=tiles)
