@@ -119,6 +119,13 @@ nav {
       line-height: 200%;
       letter-spacing: 0.05em;
     }
+
+    &.steps {
+      img {
+        width: 100%;
+        border: 1px solid $gray-lightest;
+      }
+    }
   }
 }
 
