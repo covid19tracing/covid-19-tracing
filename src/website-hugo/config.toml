@@ -5,6 +5,9 @@ baseURL = "https://covid-19-tracing.netlify.com"
 theme = "covid19"
 enableRobotsTXT = true
 
+[markup.goldmark.renderer]
+  unsafe= true
+
 [permalinks]
   posts = "/:slug/"
 
