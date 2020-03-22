@@ -26,9 +26,9 @@ Reach out to us. We will provide you our confirmation tokens. Only with this tok
 
 Everyone else:
 
-    Share our message and help us reach the official health organisations
-    Reachout to us. We are looking for volunteers.
-    Provide us with your feedback
+- Share our message and help us reach the official health organisations
+- Reachout to us. We are looking for volunteers.
+- Provide us with your feedback
 
 
 ## Contact
