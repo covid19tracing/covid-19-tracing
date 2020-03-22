@@ -1,0 +1,54 @@
+{{ define "main" }}
+
+<div class="content-container">
+    <div class="content">
+        {{ .Content }}
+    </div>
+</div>
+
+<div class="content-container">
+    <div class="content upload">
+        <h2>Upload a new trace</h2>
+
+        <p>
+            We will upload less than 15 days of your location history.
+            No other data will leave your computer and of course, we will use your data with care.
+            We will anonymize it and merge it with other people's data. We will never publish your raw data!
+            Please fill out the following form. We will ask you at the end to press the button to upload the data,
+            before this action, no data will leave your computer!
+        </p>
+
+        <div class="uploadstep">
+            <label for="testedDate">When have you been positively tested?</label>
+            <input type="date" id="testedDate" name="tested" value="">
+        </div>
+        
+        <div id="symptoms" class="uploadstep hidden">
+            <label for="symptomsDate">When have you experienced your first symptoms?</label>
+            <input type="date" id="symptomsDate" name="symptoms" value="" class="spacerright">
+            <label for="nosymptoms" class="samerow">I haven't experienced any symptoms</label>
+            <input type="checkbox" id="nosymptoms" name="nosymptoms" value="nosymptoms">
+        </div>
+        
+        <div id="daterangeinfo" class="uploadstep hidden"></div>
+        
+        <div id="uploadfield" class="uploadstep hidden">
+            <label for="file">Select your Google Takeout file <b>Location History.json</b></label>
+            <input class="form-control" type="file" id="file" name="file">
+        </div>
+
+        <div id="filteredinformation" class="uploadstep hidden"></div>
+
+        <div id="upload" class="uploadstep hidden">
+            <button type="button" class="form-control" id="cf-submit" name="upload">Upload your data</button>
+        </div>
+
+        <div id="uploadinformation" class="uploadstep hidden"></div>
+
+    </div>
+</div>
+
+{{ $js := resources.Get "js/covid.js" | minify | fingerprint }}
+<script src="{{ $js.Permalink }}"></script>
+
+{{ end }}

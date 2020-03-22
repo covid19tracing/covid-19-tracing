@@ -1,0 +1,28 @@
+languageCode = "en-US"
+title = "COVID-19 Tracing"
+disableKinds = ["taxonomy", "taxonomyTerm"]
+baseURL = "https://covid-19-tracing.netlify.com"
+theme = "covid19"
+enableRobotsTXT = true
+
+[permalinks]
+  posts = "/:slug/"
+
+# Menu links along the sidebar navigation.
+[[menu.main]]
+	identifier = "about"
+	name = "About"
+	url = "/about/"
+	weight = 1 # Weight is an integer used to sort the menu items. The sorting goes from smallest to largest numbers. If weight is not defined for each menu entry, Hugo will sort the entries alphabetically.
+
+[[menu.main]]
+	identifier = "map"
+	name = "Map"
+	url = "/map/"
+	weight = 2
+
+[[menu.main]]
+	name = "Add new case"
+	identifier = "newcase"
+	url = "/newcase/"
+	weight = 3
