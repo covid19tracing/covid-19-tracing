@@ -1,0 +1,16 @@
+hugowatch:
+  image: jojomi/hugo:latest
+  volumes:
+    - ./src:/src
+    - ./public:/output
+  ports:
+    - 1313:1313
+  command: ["hugo", "-s", "/src", "-d", "/output", "--bind=0.0.0.0", "server"]
+
+hugobuild:
+  image: jojomi/hugo:latest
+  volumes:
+    - ./src:/src
+    - ./public:/output
+  command: ["hugo", "-s", "/src", "-d", "/output"]
+  
