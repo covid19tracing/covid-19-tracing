@@ -22,11 +22,12 @@ function sendData(data) {
 
 function showArea(areaID) {
     document.getElementById(areaID).classList.remove("hidden");
+    window.scrollTo(0,document.body.scrollHeight);
 }
 
 function showInformation(areaID,toShow) {
-    showArea(areaID);
     document.getElementById(areaID).innerHTML = toShow;
+    showArea(areaID);
 }
 
 function handleFileSelect(evt) {

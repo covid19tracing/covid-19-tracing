@@ -17,7 +17,7 @@ $sans-serif: "Open Sans","Segoe UI","Helvetica Neue",Helvetica,Roboto,FreeSans,s
 $code: Menlo,Monaco,"Courier New",monospace;
 
 // BREAKPOINTS
-$breakpoint-tablet: 1000px;
+$breakpoint-tablet: 1100px;
 
 $content-width-full: 1100px;
 
@@ -47,6 +47,9 @@ nav {
     justify-content: space-between;
     flex-direction: row;
     width: $content-width-full;
+    @media (max-width: $breakpoint-tablet) {
+      padding: 1em;
+    }    
     .nav-header a {
       font-size: 20px;
       font-weight: bold;
@@ -67,6 +70,9 @@ nav {
         list-style: none;
         display: block;
         padding: 10px 20px 10px 20px;
+        @media (max-width: $breakpoint-tablet) {
+          padding: 15px 10px 10px 10px;
+        }          
         a {
           font-size: 18px;
           text-decoration: none;
@@ -103,6 +109,20 @@ nav {
   .subtitle {
     padding: 10px;
   }
+  .menu {
+    margin-top: 20px;
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 130%;
+      border: 1px solid $orange;
+      border-radius: 3px;
+      padding: 10px;
+      &:hover {
+        background-color: $orange;
+      }
+    }
+  }
 }
 
 .content-container {
@@ -111,6 +131,10 @@ nav {
   margin-top: 1em;
   .content {
     width: $content-width-full;
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+      padding: 1em;
+    }
     p {
       line-height: 200%;
       letter-spacing: 0.05em;
