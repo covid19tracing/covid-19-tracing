@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+{{ $banner := resources.Get "images/covid19.jpg"  }}
+
+<div class="banner-container" style="background-image: url({{ $banner.Permalink }});">
+    <div class="subtitle">Let's fight the virus together</div>
+    <div class="title">COVID-19 Tracing</div>
+    <div class="menu"><a href="/map">Open Map</a></div>
+</div>
+
+<div class="content-container">
+    <div class="content">
+        {{ .Content }}
+    </div>
+</div>
+{{ end }}
