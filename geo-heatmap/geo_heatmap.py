@@ -26,7 +26,7 @@ class Generator:
         self.min_activity_confidence = 50
         self.accepted_activities = ["STILL", "WALKING"]
         self.frequent_coordinates = []
-        self.coordinate_accuracy = 3
+        self.coordinate_accuracy = 6
         self.max_acceptable_magnitude = 400
 
     def loadJSONData(self, json_file, date_range):

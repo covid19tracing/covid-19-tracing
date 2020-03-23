@@ -1,0 +1,11 @@
+<!-- Sidebar navigation -->
+<nav>
+  <div class="nav-menu">
+    <h1 class="nav-header"><a href="/">{{ .Site.Title }}</a></h1>
+    <ol>
+      {{ range .Site.Menus.main }}
+        <li><a class="color-link nav-link" href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ol>
+  </div>
+</nav>

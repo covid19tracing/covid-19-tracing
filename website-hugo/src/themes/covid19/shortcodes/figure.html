@@ -1,0 +1,32 @@
+
+{{ $original := (.Page.Resources.ByType "image").GetMatch (printf "*%s" (.Get "src")) }}
+{{ if ge $original.Width 360 }}
+{{ $.Scratch.Set "srcset" "360|(max-width: 37.5em) 360px" }}
+{{ end }}
+{{ if ge $original.Width 700  }}
+{{ $.Scratch.Set "srcset" "360|(max-width: 37.5em) 360px,700|(min-width: 700px) 700px" }}
+{{ end }}
+{{ $srcset := split ($.Scratch.Get "srcset") "," }}
+
+<!-- image -->
+<figure{{ with .Get "class" }} class="{{.}}"{{ end }}>
+	<!-- image without srcset -->
+    {{ if .Get "link"}}<a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>{{ end }}
+        <img src="{{ $original.RelPermalink }}"
+        {{ if len $srcset | gt 1 }}
+        srcset="{{range $i, $set := $srcset}}{{ $setparams := split $set "|" }}{{$sizecondition := index $setparams 0 }}{{ $image := $original.Resize (print $sizecondition "x") }}{{ if $i }}, {{ end }}{{ (print $image.RelPermalink " " $sizecondition "w") }}{{ end }}" sizes="{{range $i, $set := $srcset}}{{ $setparams := split $set "|" }}{{$mediacondition := index $setparams 1 }}{{ if $i }}, {{ end }}{{ $mediacondition }}{{ end }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt"}}{{.}}{{else}}{{ .Get "caption" }}{{ end }}" {{ end }}{{ with .Get "width" }}width="{{.}}" {{ end }}{{ with .Get "height" }}height="{{.}}" {{ end }}
+        {{ end }}
+        />
+    {{ if .Get "link"}}</a>{{ end }}
+    {{ if or (or (.Get "title") (.Get "caption")) (.Get "attr")}}
+    <figcaption>{{ if isset .Params "title" }}
+        <h4>{{ .Get "title" }}</h4>{{ end }}
+        {{ if or (.Get "caption") (.Get "attr")}}<p>
+        {{ .Get "caption" }}
+        {{ with .Get "attrlink"}}<a href="{{.}}"> {{ end }}
+            {{ .Get "attr" }}
+        {{ if .Get "attrlink"}}</a> {{ end }}
+        </p> {{ end }}
+    </figcaption>
+    {{ end }}
+</figure>
