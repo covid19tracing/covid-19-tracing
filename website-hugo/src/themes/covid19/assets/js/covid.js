@@ -6,10 +6,12 @@ var endDate;
 
 function sendData(data) {
 
+    let token = getToken();
+
     console.log("start upload" + data);
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://europe-west3-covid-19-tracing.cloudfunctions.net/uploadLocation?token=Qua0Fi', true);
+    xhr.open('POST', 'https://europe-west3-covid-19-tracing.cloudfunctions.net/uploadLocation?token='+token, true);
     
     xhr.onload = function (e) {
       console.log(e.target.response);
@@ -28,6 +30,10 @@ function showArea(areaID) {
 function showInformation(areaID,toShow) {
     document.getElementById(areaID).innerHTML = toShow;
     showArea(areaID);
+}
+
+function isTokenValid(token) {
+    return token.length === 6;
 }
 
 function handleFileSelect(evt) {
@@ -110,6 +116,18 @@ function handleTested(evt) {
     }
 }
 
+function getToken() {
+    let token = document.getElementById('token').value;
+    return token.replace(/[^a-zA-Z0-9]/g, '');
+}
+
+function handleToken() {
+    let token = getToken();
+    if (!isTokenValid(token)) {
+        alert('Sorry, your code is not valid!');
+    }
+}
+
 function handleSymptoms() {
     let testedDate = getTestedDate();
     let symptomsDate = getSymptomsDate();
@@ -128,6 +146,7 @@ function handleSymptoms() {
     showArea('uploadfield');
 }
 
+document.getElementById('token').addEventListener('change', handleToken, false);
 document.getElementById('testedDate').addEventListener('change', handleTested, false);
 document.getElementById('symptomsDate').addEventListener('change', handleSymptoms, false);
 document.getElementById('nosymptoms').addEventListener('change', handleSymptoms, false);
