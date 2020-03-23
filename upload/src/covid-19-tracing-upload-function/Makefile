@@ -26,7 +26,7 @@ deploy-prod:  ## deploy function to google cloud production
 .PHONY: pwgen
 pwgen:  ## run all needed container for dev
 	echo "{" > tokens.json
-	for p in $$(pwgen 6 10); do echo "\"$${p}\": 1," >> tokens.json; done;
+	for p in $$(pwgen 6 999); do echo "\"$${p}\": 1," >> tokens.json; done;
 	echo "\"$$(pwgen 6 1)\": 1" >> tokens.json;
 	echo "}" >> tokens.json
 
