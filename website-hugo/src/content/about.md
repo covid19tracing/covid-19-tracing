@@ -7,35 +7,26 @@ slug: about
 
 # About COVID-19 Tracing
 
-We are a couple of tech people who want to help in times of this corona crisis. We know that contact tracing is quite difficult and needs a lot of manual effort.
+## Our Vision:
+In times of the COVID-19 epidemic, people can live their normal lives again as a proper [trace, test, treat](https://www.theguardian.com/world/2020/mar/13/who-urges-countries-to-track-and-trace-every-covid-19-case) method is in place.
 
-Instead of tracking all mobile phones, our platform allows patients diagnosed with the COVID-19 virus to anonymously upload their google location data (only the last few days) for a contact tracing.
+## Our Mission:
+Providing a platform to speed up tracing and inform the society about Covid-19 infectious hot spots on a map which show a high infection rate in the past days.
 
-We need to be able to contain this threat without stoping our economy completly.
+## The project
+We are a couple of tech people who want to help in times of this corona crisis. We know that contact tracing is difficult and needs a lot of manual effort.
+Instead of tracking all mobile phones and all related privacy issues, our platform allows COVID-19 positive tested people to anonymously upload their google location data (only the last few days) for contact tracing. We aggregate all data and show infectious hot spots on a map that were visited by a lot of people who were tested positive later. A good example would be the Austrian ski resort that spread the coronavirus around Europe ([Spiegel International, 2020-03-17](https://www.spiegel.de/international/europe/ischgl-austrian-ski-resort-flings-coronavirus-around-europe-a-68e10295-1d9c-42cc-9e52-7fea35436479)).
 
-Many countries are now implementing unprecedented measures to contain the COVID-19 virus, most closed their borders and imposed a mandatory quarantine. Although necessary, this measure can not last much longer. Many people are now prevented from work which might lead to many businesses going bankrupt.
 
-How can we fight an invisible threat?
+## Privacy
+We are computer scientists and know about the importance of privacy. That is why we implemented the system using the highest security standards and we also try to anonymize the location data as much as possible. The data of multiple people are aggregated, blured by reducing precision, and filtered. Thus, the possibility to track back to individuals is minimized.  
 
-Instead of individually, countries must work together in order to trace the virus and make it visible.
-We developed a simple system that each country can implement in order to anonymously trace the location history of patients that were diagnosed with the novel corona virus. This way we can quarantine areas with high probability of infection allowing people outside of these zones to leave their homes for work, limited social interaction and providing for their families.
+## How can you help us?
 
-**What are the next steps?**
-
-- As a patient diagnosed as COVID-19 positive:
-
-    - Reach out to us. We will provide you with a token that you will be able to use to report your case.
-
-- As part of an official health organisation
-
-    - Reach out to us. We will provide you access to our confirmation tokens so that you can distribute to COVID positive patientes.
-
-- Everyone else:
-
-    - Share our message and help us reach the official health organisations
-    - Reachout to us. We are looking for volunteers.
-    - Provide us with your feedback
-
+* You were tested COVID-19 positive: Reach out to us. We will provide you with a token that enables you to report your case.
+* As part of an official health organization: 
+Reach out to us, we would love to collaborate and improve our system. We can also provide tokens that you can distribute.
+* Everyone else: Share our message and help us reach the official health organizations. Reach out to us. We are looking for supporters of the project, whatever your background is. If you think you can help, drop us a message. And last but not least, provide us your feedback, we are happy to know what you think about the platform or what we could improve.
 
 ## Contact
 
