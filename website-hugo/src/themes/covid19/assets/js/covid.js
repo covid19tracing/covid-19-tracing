@@ -1,5 +1,5 @@
 
-var filterDays = 10;
+var filterDays = 15;
 var filteredLocations = [];
 var startDate;
 var endDate;
