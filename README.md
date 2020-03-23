@@ -25,5 +25,5 @@ go to `upload/src/covid-19-tracing-upload-function` and execute `make pwgen` (pw
 
 * Tiago Ferreira
 * Wolfgang Gassler
-* more on https://covid-19-tracing.netlify.com/about
+* more on https://covid19tracing.org/about
 
