@@ -5,7 +5,7 @@ draft: false
 slug: map
 ---
 
-# !!!FAKE DATA!!!
+# At the moment the data in the map is test data and it does NOT represent real cases of COVID-19
 
 <iframe src="heatmap.html" width="100%" height="700px"></iframe>
 
