@@ -4,25 +4,10 @@
     {{ partial "head.html" . }}
     <body>
         {{ partial "nav.html" . }}
+        
         {{ block "main" . }}
         {{ end }}
 
-
-<script type="text/javascript">
-    var _paq = window._paq || [];
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u="https://piwik.inlupus.at/";
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '10']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
-  </script>
-  <noscript><p><img src="https://piwik.inlupus.at/matomo.php?idsite=10&amp;rec=1" style="border:0;" alt="" /></p></noscript>
-
-    
-
+        {{ partial "matomo.html" . }}
     </body>
 </html>
