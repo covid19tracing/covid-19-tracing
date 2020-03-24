@@ -9,6 +9,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;display=swap" rel="stylesheet">
 
+    <link rel="image_src" href={{resources.Get "images/covid19.jpg" }}>
+
     <!-- Styles -->
     <!-- Use Hugo Pipes to process the Sass file (convert to CSS, minify, and add a hash) -->
     {{ $main_style := resources.Get "css/main.scss" | toCSS | minify | fingerprint }}
