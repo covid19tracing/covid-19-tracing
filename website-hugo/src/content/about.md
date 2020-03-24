@@ -30,9 +30,11 @@ Reach out to us, we would love to collaborate and improve our system. We can als
 
 ## Contact
 
-You can contact us via covid-19-tracing@gmail.com
+* Email: info@covid19tracing.org
+* Anonymous feedback to our Constructeev Channel https://www.constructeev.com/covid19tracing
 
 ## The Team behind the project
 
 - Tiago Ferreira ([LinkedIn](https://www.linkedin.com/in/tiago-ferreira-48562095/), [Twitter](https://twitter.com/TiagoRBF))
 - Wolfgang Gassler ([LinkedIn](https://www.linkedin.com/in/wolfganggassler/), [Twitter](https://twitter.com/schafele))
+- YOU? Drop us a message...
