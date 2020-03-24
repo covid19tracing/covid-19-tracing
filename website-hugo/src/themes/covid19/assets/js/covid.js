@@ -15,7 +15,19 @@ function sendData(data) {
     
     xhr.onload = function (e) {
       console.log(e.target.response);
-      document.getElementById('uploadinformation').innerHTML = e.target.response;
+      let msg = "Your location data was uploaded successfully. Thanks a lot for your contribution to fight the virus. Your anonymized data will be integrated in the map soon.";
+      if (xhr.status == 403) {
+          msg = "Sorry, your code was not accepted. Please contact us at info@covid19tracing.org";
+      }
+      if (xhr.status == 400) {
+          msg = "Sorry, there was a problem with the data you uploaded. Please contact us at info@covid19tracing.org for assistance";
+      }
+      showInformation('uploadinformation',msg);
+    };
+
+    xhr.onerror = function() {
+        alert("Sorry, we couldn't upload your data. Is your network down?");
+        showInformation('uploadinformation',"Upload failed.");
     };
     
     xhr.send(JSON.stringify(data));

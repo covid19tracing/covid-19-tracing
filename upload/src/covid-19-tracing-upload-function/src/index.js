@@ -27,6 +27,7 @@ const storeData = function(token,data,dataWritten) {
 
 exports.uploadLocation = (req, res) => {
   let token = req.query.token;
+  res.header("Access-Control-Allow-Origin", "*"); 
 
   Token.isValid(token).then(function() {
     let locationData = req.body;
@@ -34,15 +35,14 @@ exports.uploadLocation = (req, res) => {
     if (locationData.length > 0) {
       storeData(
         token,locationData, function() {
-          res.header("Access-Control-Allow-Origin", "*"); 
           res.status(200).send(locationData.length+" bytes received, we will process the data and add it to our map. We wish you a speedy recovery.");
         }
       );
     } else {
-      res.status(200).send('data invalid');
+      res.status(400).send('data invalid');
     }
   }, function() {
-    res.status(200).send('sorry');
+    res.status(403).send('sorry');
   });
 
 };
