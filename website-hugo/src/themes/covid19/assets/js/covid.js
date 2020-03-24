@@ -84,7 +84,7 @@ function handleFileSelect(evt) {
                 document.getElementById('filteredinformation').innerHTML + " ... sorry, nothing to upload.";
         } else {
             showArea('upload');
-            document.getElementById('cf-submit').innerHTML = "Upload "+filteredLocations.length+" location data to server..."
+            document.getElementById('cf-submit').innerHTML = "Upload "+filteredLocations.length+" location data and share the data with Covid19tracing.org ..."
         }
 
     };
@@ -154,7 +154,7 @@ function handleSymptoms() {
     }
     startDate.setDate(startDate.getDate() - filterDays);
 
-    showInformation('daterangeinfo',"We will upload your data between "+startDate+" and "+endDate);
+    showInformation('daterangeinfo',"We will upload your data between "+startDate.toDateString()+" and "+endDate.toDateString());
     showArea('uploadfield');
 }
 
