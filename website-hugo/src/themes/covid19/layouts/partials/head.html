@@ -4,12 +4,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
+    <meta property="og:image" content="https://covid19tracing.org/images/covid19.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+
     <title>{{ if and .Title (ne .Title .Site.Title) }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
     <meta name="theme-color" content="#ffffff">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;display=swap" rel="stylesheet">
 
-    <link rel="image_src" href={{resources.Get "images/covid19.jpg" }}>
+    <link rel="image_src" href="https://covid19tracing.org/images/covid19.jpg">
+
+
 
     <!-- Styles -->
     <!-- Use Hugo Pipes to process the Sass file (convert to CSS, minify, and add a hash) -->
