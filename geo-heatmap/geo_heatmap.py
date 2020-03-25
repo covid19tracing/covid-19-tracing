@@ -172,6 +172,13 @@ class Generator:
                 .format(file_name))
 
     def updateCoord(self, coords):
+        if self.coordinates[coords] > self.max_acceptable_magnitude:
+            self.frequent_coordinates.append(coords)
+
+        if coords in self.frequent_coordinates:
+            self.coordinates[coords] = 0
+            return
+
         self.coordinates[coords] += 1
         if self.coordinates[coords] > self.max_magnitude:
             self.max_coordinates = coords
