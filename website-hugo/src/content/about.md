@@ -8,7 +8,7 @@ slug: about
 # About COVID-19 Tracing
 
 ## Our Vision:
-In times of the COVID-19 epidemic, we can prevent mandatory quarantines as a proper [trace, test, treat](https://www.theguardian.com/world/2020/mar/13/who-urges-countries-to-track-and-trace-every-covid-19-case) method is in place.
+In times of the COVID-19 epidemic, most people can live their normal lives again as a [trace, test, treat](https://www.theguardian.com/world/2020/mar/13/who-urges-countries-to-track-and-trace-every-covid-19-case) method is in place.
 
 ## Our Mission:
 Providing a platform to speed up tracing and inform the society about Covid-19 infectious hot spots on a map which show a high infection rate in the past days.

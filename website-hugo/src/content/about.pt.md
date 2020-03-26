@@ -8,10 +8,10 @@ slug: about
 # Sobre o COVID-19 Tracing
 
 ## A Nossa visão:
-Nesta época da epidemia do COVID-19, nós podemos evitar uma quanrentena geral com um método de [rastreamento, teste, tratamento](https://www.theguardian.com/world/2020/mar/13/who-urges-countries-to-track-and-trace-every-covid-19-case) de todos os casos covid-19 adequado .
+Nesta época da epidemia do COVID-19, gradualmente as pessoas podem voltar à sua vida através um método de [rastreamento, teste, tratamento](https://www.theguardian.com/world/2020/mar/13/who-urges-countries-to-track-and-trace-every-covid-19-case) de todos os casos covid-19 adequado .
 
 ## A Nossa missão:
-Fornecenr uma plataforma para acelerar o rastreamento e informar a sociedade sobre os pontos infecciosos do Covid-19 num mapa que mostra a taxa de infecção nos últimos dias.
+Fornecer uma plataforma para acelerar o rastreamento e informar a sociedade sobre os pontos infecciosos do Covid-19 num mapa que mostra a taxa de infecção nos últimos dias.
 
 ## O projeto
 Somos engenheiros de software que querem ajudar nestes tempos de crise. Sabemos que o rastreamento de contato é difícil e requer muito esforço manual.
