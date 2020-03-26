@@ -1,7 +1,7 @@
 languageCode = "en-US"
 title = "COVID-19 Tracing"
 disableKinds = ["taxonomy", "taxonomyTerm"]
-baseURL = "https://covid-19-tracing.netlify.com"
+baseURL = "https://covid19tracing.org"
 theme = "covid19"
 enableRobotsTXT = true
 
