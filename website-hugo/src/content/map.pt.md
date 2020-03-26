@@ -14,7 +14,7 @@ slug: map
 
 **Nós não pertencemos a uma organização de saúde ou do estado. Deve seguir as indicações fornecidas pelos canis ofíciais**
 
-Independentemente, se esteve nas áreas marcadas ou não, deve sempre estar ciente de que estamos numa situação de pandemia. Técnicas de higiene, como lavar as mãos cuidadosamente e com frequência, evitar interação social, manter as mãos afastadas da boca e do nariz, tossir e espirrando para o cotovelo e ficar em casa em caso de possíveis sintomas. Para isso, consulte [conselhos da Organização Mundial da Saúde] (https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public)
+Independentemente, se esteve nas áreas marcadas ou não, deve sempre estar ciente de que estamos numa situação de pandemia. Técnicas de higiene, como lavar as mãos cuidadosamente e com frequência, evitar interação social, manter as mãos afastadas da boca e do nariz, tossir e espirrando para o cotovelo e ficar em casa em caso de possíveis sintomas. Para isso, consulte [conselhos da Organização Mundial da Saúde](https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public)
 
 ## Legenda do mapa
 
