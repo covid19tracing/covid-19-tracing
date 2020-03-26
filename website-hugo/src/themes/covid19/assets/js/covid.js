@@ -15,19 +15,19 @@ function sendData(data) {
     
     xhr.onload = function (e) {
       console.log(e.target.response);
-      let msg = "Your location data was uploaded successfully. Thanks a lot for your contribution to fight the virus. Your anonymized data will be integrated in the map soon.";
+      let msg = '{{ i18n "upload_data_sucess" }}';
       if (xhr.status == 403) {
-          msg = "Sorry, your code was not accepted. Please contact us at info@covid19tracing.org";
+          msg = '{{ i18n "upload_token_fail" }}';
       }
       if (xhr.status == 400) {
-          msg = "Sorry, there was a problem with the data you uploaded. Please contact us at info@covid19tracing.org for assistance";
+          msg = '{{ i18n "upload_data_fail" }}';
       }
       showInformation('uploadinformation',msg);
     };
 
     xhr.onerror = function() {
-        alert("Sorry, we couldn't upload your data. Is your network down?");
-        showInformation('uploadinformation',"Upload failed.");
+        alert('{{ i18n "upload_data_fail_network" }}');
+        showInformation('uploadinformation','{{ i18n "upload_failed" }}');
     };
     
     xhr.send(JSON.stringify(data));
@@ -50,7 +50,7 @@ function isTokenValid(token) {
 
 function handleFileSelect(evt) {
 
-    showInformation('filteredinformation',"PROCESSING...");
+    showInformation('filteredinformation','{{ i18n "processing" }}');
     var f = evt.target.files[0];
 
     const reader = new FileReader();  
@@ -72,8 +72,8 @@ function handleFileSelect(evt) {
         console.log('locations filtered: '+filteredLocations.length);
 
         var info =
-            locationData.locations.length+' locations filtered, '+filteredLocations.length
-            + ' locations between '+new Date(fromTimestamp).toDateString()+' and '+new Date(toTimestamp).toDateString()+' found';
+            locationData.locations.length+' {{ i18n "locations_filtered" }}, '+filteredLocations.length
+            + ' {{ i18n "locations_between" }} '+new Date(fromTimestamp).toDateString()+' {{ i18n "and" }} '+new Date(toTimestamp).toDateString()+' {{ i18n "found" }}';
         
         showInformation('filteredinformation',info);
 
@@ -81,10 +81,10 @@ function handleFileSelect(evt) {
 
         if (filteredLocations.length == 0) {
             document.getElementById('filteredinformation').innerHTML =
-                document.getElementById('filteredinformation').innerHTML + " ... sorry, nothing to upload.";
+                document.getElementById('filteredinformation').innerHTML + ' {{ i18n "nothing_to_upload" }}';
         } else {
             showArea('upload');
-            document.getElementById('cf-submit').innerHTML = "Upload "+filteredLocations.length+" location data and share the data with Covid19tracing.org ..."
+            document.getElementById('cf-submit').innerHTML = '{{ i18n "upload" }} '+filteredLocations.length+' {{ i18n "share_data" }}'
         }
 
     };
@@ -95,7 +95,7 @@ function handleFileSelect(evt) {
 
 function handleUpload() {
     showArea('upload');
-    showInformation('uploadinformation',"UPLOADING...");
+    showInformation('uploadinformation','{{ i18n "uploading" }}');
 
     let symptoms = getSymptomsDate();
 
@@ -122,7 +122,7 @@ function handleTested(evt) {
     let testedDate = getTestedDate();
     let now = new Date();
     if (testedDate > now) {
-        alert("Sorry, you can't be tested in the future");
+        alert('{{ i18n "fail_test_future" }}');
     } else {
         showArea('symptoms');
     }
@@ -136,7 +136,7 @@ function getToken() {
 function handleToken() {
     let token = getToken();
     if (!isTokenValid(token)) {
-        alert('Sorry, your code is not valid!');
+        alert('{{ i18n "fail_code_not_valid" }}');
     }
 }
 
@@ -145,7 +145,7 @@ function handleSymptoms() {
     let symptomsDate = getSymptomsDate();
     let now = new Date();
     if (symptomsDate !== null && symptomsDate > now) {
-        alert("Sorry, symptoms in the future? Check your symptoms date, please.");
+        alert('{{ i18n "fail_symptoms_in_future" }}');
     }
     endDate = new Date(testedDate);
     startDate = new Date(testedDate);
@@ -154,7 +154,9 @@ function handleSymptoms() {
     }
     startDate.setDate(startDate.getDate() - filterDays);
 
-    showInformation('daterangeinfo',"We will upload your data between "+startDate.toDateString()+" and "+endDate.toDateString());
+    let info = '{{ i18n "upload_your_between" }} ' + startDate.toDateString() + ' {{ i18n "and" }} ' + endDate.toDateString();
+
+    showInformation('daterangeinfo',info);
     showArea('uploadfield');
 }
 

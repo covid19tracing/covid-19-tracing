@@ -1,0 +1,86 @@
+[small_banner_title]
+other = "VAMOS VENCER O VIRUS JUNTOS"
+
+[open_map]
+other = "Ver Mapa"
+
+[upload_description]
+other = """
+Apenas os últimos 15 dias do seu histórico de localizações serão enviados.
+Os seus dados serão anonimizados e agregados com as localizações de outras pessoas.
+Por favor, preencha o formulário abaixo.
+"""
+
+[insert_token]
+other = "Insira aqui o seu token:"
+
+[when_tested_positive]
+other = "Quando foi diagnosticado com COVID-19?"
+
+[i_had_no_symptoms]
+other = "Não tive nenhum sintoma até á data"
+
+[select_location_file]
+other = "Selecione o seu ficheiro do Google Takeout com o nome"
+
+[upload_data]
+other = "Enviar Informação"
+
+[upload_data_sucess]
+other = """
+A sua localização foi enviada com sucesso. Obrigado pela sua contribuição para combater este virus.
+A sua informação será anonimizada e inserida no mapa brevemente.
+"""
+
+[upload_data_fail]
+other = """
+Pedimos desculpa, mas houve um problema ao enviar os dados. Por favor entre em contato connosco em info@covid19tracing.org, obrigado
+"""
+
+[upload_token_fail]
+other = "Pedimos desculpa mas o seu código não é válido. Por favor entre em contato connosco em info@covid19tracing.org, obrigado"
+
+[upload_data_fail_network]
+other = "Pedimos desculpa mas não conseguimos enviar a sua informação. Verifica a sua connecção á internet"
+
+[upload_failed]
+other = "Envio Falhou."
+
+[processing]
+other = "PROCESSANDO..."
+
+[locations_filtered]
+other = "localizações filtradas"
+
+[locations_between]
+other = "localizações entre"
+
+[and]
+other = "e"
+
+[found]
+other = "encontrados"
+
+[nothing_to_upload]
+other = "... pedimos descula, mas não encontramos nenhuma informação para enviar."
+
+[upload]
+other = "enviar"
+
+[share_data]
+other = "informação de localização para Covid19tracing.org ..."
+
+[uploading]
+other = "A ENVIAR..."
+
+[fail_test_future]
+other = "Pedimos desculpa, mas não pode ser testado no futuro"
+
+[fail_code_not_valid]
+other = "Pedimos desculpa, mas o seu código não é válido!"
+
+[fail_symptoms_in_future]
+other = "Inseriou uma data de sintomas no futuro?"
+
+[upload_your_between]
+other = "Vamos somente enviar a sua informação de localização pertencente às datas entre"
