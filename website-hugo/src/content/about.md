@@ -15,7 +15,7 @@ Providing a platform to speed up tracing and inform the society about Covid-19 i
 
 ## The project
 We are a couple of tech people who want to help in times of this corona crisis. We know that contact tracing is difficult and needs a lot of manual effort.
-Instead of tracking all mobile phones (due to all related privacy issues), our platform allows COVID-19 positive tested people to anonymously upload their google location data (only the last few days) for contact tracing. We aggregate all data and show the infectious hot spots on a map that were visited by a COVID19 positive people. A good example would be the Austrian ski resort that spread the coronavirus around Europe ([Spiegel International, 2020-03-17](https://www.spiegel.de/international/europe/ischgl-austrian-ski-resort-flings-coronavirus-around-europe-a-68e10295-1d9c-42cc-9e52-7fea35436479)).
+Instead of tracking all mobile phones (due to all related privacy issues), our platform allows COVID-19 positive tested people to anonymously upload their google location data (only the last few days) for contact tracing. We aggregate all data and show the infectious hot spots on a map that were visited by COVID19 positive people. A good example would be the Austrian ski resort that spread the coronavirus around Europe ([Spiegel International, 2020-03-17](https://www.spiegel.de/international/europe/ischgl-austrian-ski-resort-flings-coronavirus-around-europe-a-68e10295-1d9c-42cc-9e52-7fea35436479)).
 
 
 ## Privacy

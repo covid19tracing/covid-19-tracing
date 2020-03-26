@@ -8,7 +8,7 @@ slug: about
 # Sobre o COVID-19 Tracing
 
 ## A Nossa visão:
-Nesta época da epidemia do COVID-19, nós podemos evitar uma quanrentena geral com um método de [rastreamento, teste, tratamento](https://www.theguardian.com/world/2020/mar/13/who-urges-countries) de todos os casos covid-19 adequado .
+Nesta época da epidemia do COVID-19, nós podemos evitar uma quanrentena geral com um método de [rastreamento, teste, tratamento](https://www.theguardian.com/world/2020/mar/13/who-urges-countries-to-track-and-trace-every-covid-19-case) de todos os casos covid-19 adequado .
 
 ## A Nossa missão:
 Fornecenr uma plataforma para acelerar o rastreamento e informar a sociedade sobre os pontos infecciosos do Covid-19 num mapa que mostra a taxa de infecção nos últimos dias.
@@ -35,6 +35,6 @@ Entre em contato conosco, gostaríamos de colaborar e melhorar nosso sistema. Ta
 
 ## A equipe por trás do projeto
 
-- Tiago Ferreira ([LinkedIn] (https://www.linkedin.com/in/tiago-ferreira-48562095/), [Twitter] (https://twitter.com/TiagoRBF))
-- Wolfgang Gassler ([LinkedIn] (https://www.linkedin.com/in/wolfganggassler/), [Twitter] (https://twitter.com/schafele))
+- Tiago Ferreira ([LinkedIn](https://www.linkedin.com/in/tiago-ferreira-48562095/), [Twitter](https://twitter.com/TiagoRBF))
+- Wolfgang Gassler ([LinkedIn](https://www.linkedin.com/in/wolfganggassler/), [Twitter](https://twitter.com/schafele))
 - Tu? Envia-nos uma mensagem ...
