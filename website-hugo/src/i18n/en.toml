@@ -8,14 +8,17 @@ other = "Open Map"
 other = """
 We will upload only the last 15 days of your location history.
 Your data will be anonymized and merged with other people's uploads.
-We will never publish your raw data! Please fill out the form bellow.
+We will never publish your raw data! Please fill out the form below.
 """
 
 [insert_token]
-other = "Please insert the code you have got:"
+other = "Please insert the code you have got (use the code Testit for testing purposes):"
 
 [when_tested_positive]
 other = "When have you been tested positive?"
+
+[when_first_symptoms]
+other = "When have you experienced your first symptoms?"
 
 [i_had_no_symptoms]
 other = "I haven't experienced any symptoms"

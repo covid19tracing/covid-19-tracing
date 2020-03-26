@@ -17,6 +17,9 @@ other = "Insira aqui o seu token:"
 [when_tested_positive]
 other = "Quando foi diagnosticado com COVID-19?"
 
+[when_first_symptoms]
+other = "Quando sentiu os primeiros sintomas?"
+
 [i_had_no_symptoms]
 other = "Não tive nenhum sintoma até á data"
 
