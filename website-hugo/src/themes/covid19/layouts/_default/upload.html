@@ -11,41 +11,37 @@
         <h2>Upload a new trace</h2>
 
         <p>
-            We will upload only the last 15 days of your location history.
-            We will anonymize the data and merge it with other people's uploads.
-            We will never publish your raw data! Please fill out the form below.
-            We will ask you at the end to press the button and confirm your upload, before this action,
-            no data will leave your computer!
+            {{ i18n "upload_description" }}
         </p>
 
         <div class="uploadstep">
-            <label for="token">Please insert the code you have got: </label>
+            <label for="token">{{ i18n "insert_token" }}</label>
             <input type="text" id="token" name="token">
         </div>
 
         <div id ="tested" class="uploadstep">
-            <label for="testedDate">When have you been tested positive?</label>
+            <label for="testedDate">{{ i18n "when_tested_positive" }}</label>
             <input type="date" id="testedDate" name="tested" value="">
         </div>
         
         <div id="symptoms" class="uploadstep hidden">
             <label for="symptomsDate">When have you experienced your first symptoms?</label>
             <input type="date" id="symptomsDate" name="symptoms" value="" class="spacerright">
-            <label for="nosymptoms" class="samerow">I haven't experienced any symptoms</label>
+            <label for="nosymptoms" class="samerow">{{ i18n "i_had_no_symptoms" }}</label>
             <input type="checkbox" id="nosymptoms" name="nosymptoms" value="nosymptoms">
         </div>
         
         <div id="daterangeinfo" class="uploadstep hidden"></div>
         
         <div id="uploadfield" class="uploadstep hidden">
-            <label for="file">Select your Google Takeout file <b>Location History.json</b></label>
+            <label for="file">{{ i18n "select_location_file" }} <b>Location History.json</b></label>
             <input class="form-control" type="file" id="file" name="file">
         </div>
 
         <div id="filteredinformation" class="uploadstep hidden"></div>
 
         <div id="upload" class="uploadstep hidden">
-            <button type="button" class="form-control" id="cf-submit" name="upload">Upload your data</button>
+            <button type="button" class="form-control" id="cf-submit" name="upload">{{ i18n "upload_data" }}</button>
         </div>
 
         <div id="uploadinformation" class="uploadstep hidden"></div>
@@ -55,7 +51,8 @@
     </div>
 </div>
 
-{{ $js := resources.Get "js/covid.js" | minify | fingerprint }}
+{{ $js := resources.Get "js/covid.js" | resources.ExecuteAsTemplate  (printf "%s/js/covid.js" $.Site.Language ) . | resources.Minify | fingerprint }}
+
 <script src="{{ $js.Permalink }}"></script>
 
 {{ end }}

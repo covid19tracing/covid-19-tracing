@@ -1,0 +1,81 @@
+[small_banner_title]
+other = "LET'S FIGHT THE VIRUS TOGETHER"
+
+[open_map]
+other = "Open Map"
+
+[upload_description]
+other = """
+We will upload only the last 15 days of your location history.
+Your data will be anonymized and merged with other people's uploads.
+We will never publish your raw data! Please fill out the form bellow.
+"""
+
+[insert_token]
+other = "Please insert the code you have got:"
+
+[when_tested_positive]
+other = "When have you been tested positive?"
+
+[i_had_no_symptoms]
+other = "I haven't experienced any symptoms"
+
+[select_location_file]
+other = "Select your Google Takeout file"
+
+[upload_data]
+other = "Upload your data"
+
+[upload_data_sucess]
+other = "Your location data was uploaded successfully. Thanks a lot for your contribution to fight the virus. Your anonymized data will be integrated in the map soon."
+
+[upload_data_fail]
+other = "Sorry. There was a problem with the data you uploaded. Please contact us at info@covid19tracing.org for assistance"
+
+[upload_token_fail]
+other = "Sorry. Your code was not accepted. Please contact us at info@covid19tracing.org"
+
+[upload_data_fail_network]
+other = "Sorry, we couldnt upload your data. Is your network down?"
+
+[upload_failed]
+other = "Upload failed."
+
+[processing]
+other = "PROCESSING..."
+
+[locations_filtered]
+other = "locations filtered"
+
+[locations_between]
+other = "locations between"
+
+[and]
+other = "and"
+
+[found]
+other = "found"
+
+[nothing_to_upload]
+other = "... sorry, nothing to upload."
+
+[upload]
+other = "upload"
+
+[share_data]
+other = "location data and share the data with Covid19tracing.org ..."
+
+[uploading]
+other = "UPLOADING..."
+
+[fail_test_future]
+other = "Sorry, you cant be tested in the future"
+
+[fail_code_not_valid]
+other = "Sorry, your code is not valid!"
+
+[fail_symptoms_in_future]
+other = "Sorry, symptoms in the future? Check your symptoms date, please."
+
+[upload_your_between]
+other = "We will upload your data between"

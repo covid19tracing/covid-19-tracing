@@ -1,0 +1,18 @@
+<footer class="footer">
+    <div class="content-container">
+        <div class="content">
+            {{- $currentPage := . -}}
+            {{ range .Site.Menus.footer -}}
+            <li class="{{ if $currentPage.IsMenuCurrent "footer" . }}active{{ end }}">
+                <a href="{{ .URL }}">{{ .Name }}</a>
+                {{- end }}
+            </li>
+            <li>
+                {{ if .IsTranslated }}
+                {{ range .Translations }}
+                <a href="{{ .Permalink }}">{{ .Site.Language.Params.languageName }}</a>
+                {{ end }}
+                {{ end }}
+        </div>
+    </div>
+</footer>
