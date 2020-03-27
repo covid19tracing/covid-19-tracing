@@ -54,5 +54,5 @@
 {{ $js := resources.Get "js/covid.js" | resources.ExecuteAsTemplate  (printf "%s/js/covid.js" $.Site.Language ) . | resources.Minify | fingerprint }}
 
 <script src="{{ $js.Permalink }}"></script>
-
+{{ partial "mailchimp.html" . }}
 {{ end }}
