@@ -4,11 +4,13 @@
     {{ partial "head.html" . }}
     <body>
         {{ partial "nav.html" . }}
-        
+
         {{ block "main" . }}
         {{ end }}
 
+        {{ partial "footer.html" . }}
+
         {{ partial "matomo.html" . }}
     </body>
-    {{ partial "footer.html" . }}
+    
 </html>
