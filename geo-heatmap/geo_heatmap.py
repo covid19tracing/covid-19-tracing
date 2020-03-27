@@ -25,9 +25,8 @@ class Generator:
         self.low_location_accuracy = 5000
         self.min_activity_confidence = 50
         self.accepted_activities = ["STILL", "WALKING"]
-        self.frequent_coordinates = []
-        self.coordinate_accuracy = 6
-        self.max_acceptable_magnitude = 400
+        self.coordinate_accuracy = 3
+        self.max_acceptable_magnitude = 30
 
     def loadJSONData(self, json_file, date_range):
         """Loads the Google location data from the given json file.
@@ -173,13 +172,6 @@ class Generator:
                 .format(file_name))
 
     def updateCoord(self, coords):
-        if self.coordinates[coords] > self.max_acceptable_magnitude:
-            self.frequent_coordinates.append(coords)
-
-        if coords in self.frequent_coordinates:
-            self.coordinates[coords] = 0
-            return
-
         self.coordinates[coords] += 1
         if self.coordinates[coords] > self.max_magnitude:
             self.max_coordinates = coords
@@ -200,9 +192,11 @@ class Generator:
         blur = settings["blur"]
         min_opacity = settings["min_opacity"]
         max_zoom = settings["max_zoom"]
-        
-        map_data = [(coords[0], coords[1], magnitude)
-                    for coords, magnitude in self.coordinates.items()]
+
+        map_data = []
+        for coords, magnitude in self.coordinates.items():
+            if magnitude < self.max_acceptable_magnitude:
+                map_data.append((coords[0], coords[1], magnitude))
 
         # Generate map
         m = folium.Map(location=self.max_coordinates,
