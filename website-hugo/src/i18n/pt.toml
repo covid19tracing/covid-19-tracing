@@ -87,3 +87,9 @@ other = "Inseriou uma data de sintomas no futuro?"
 
 [upload_your_between]
 other = "Vamos somente enviar a sua informação de localização pertencente às datas entre"
+
+[newsletter_msg]
+other = "Acompanhe o nosso projecto. Enviamos email se tivermos novidades"
+
+[newsletter_email_msg]
+other = "Endereço de Email"
