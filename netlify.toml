@@ -34,4 +34,4 @@ from = "/"
 to = "/pt"
 status = 301
 query = {path = ":path"}
-conditions = {Language = ["pt"]}
+conditions = {Language = ["pt"], Country = ["PT"]}
