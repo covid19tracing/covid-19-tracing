@@ -6,51 +6,6 @@
     </div>
 </div>
 
-<div class="content-container">
-    <div class="content upload">
-        <h2>Upload a new trace</h2>
-
-        <p>
-            {{ i18n "upload_description" }}
-        </p>
-
-        <div class="uploadstep">
-            <label for="token">{{ i18n "insert_token" }}</label>
-            <input type="text" id="token" name="token">
-        </div>
-
-        <div id ="tested" class="uploadstep">
-            <label for="testedDate">{{ i18n "when_tested_positive" }}</label>
-            <input type="date" id="testedDate" name="tested" value="">
-        </div>
-        
-        <div id="symptoms" class="uploadstep hidden">
-            <label for="symptomsDate">{{ i18n "when_first_symptoms" }}</label>
-            <input type="date" id="symptomsDate" name="symptoms" value="" class="spacerright">
-            <label for="nosymptoms" class="samerow">{{ i18n "i_had_no_symptoms" }}</label>
-            <input type="checkbox" id="nosymptoms" name="nosymptoms" value="nosymptoms">
-        </div>
-        
-        <div id="daterangeinfo" class="uploadstep hidden"></div>
-        
-        <div id="uploadfield" class="uploadstep hidden">
-            <label for="file">{{ i18n "select_location_file" }} <b>Location History.json</b></label>
-            <input class="form-control" type="file" id="file" name="file">
-        </div>
-
-        <div id="filteredinformation" class="uploadstep hidden"></div>
-
-        <div id="upload" class="uploadstep hidden">
-            <button type="button" class="form-control" id="cf-submit" name="upload">{{ i18n "upload_data" }}</button>
-        </div>
-
-        <div id="uploadinformation" class="uploadstep hidden"></div>
-
-        <div style="height: 300px;"></div>
-
-    </div>
-</div>
-
 {{ $js := resources.Get "js/covid.js" | resources.ExecuteAsTemplate  (printf "%s/js/covid.js" $.Site.Language ) . | resources.Minify | fingerprint }}
 
 <script src="{{ $js.Permalink }}"></script>
