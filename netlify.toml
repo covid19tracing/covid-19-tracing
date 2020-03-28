@@ -28,10 +28,3 @@ HUGO_VERSION = "0.60.1"
 
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"
-
-[[redirects]]
-from = "/"
-to = "/pt"
-status = 301
-query = {path = ":path"}
-conditions = {Language = ["pt"], Country = ["PT"]}

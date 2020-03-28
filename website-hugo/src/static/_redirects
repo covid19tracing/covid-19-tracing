@@ -7,3 +7,6 @@ http://www.covid19tracing.org/* https://covid19tracing.org/:splat 301!
 
 # Optional: Redirect default Netlify subdomain to primary domain
 https://covid-19-tracing.netlify.com/* https://covid19tracing.org/:splat 301!
+
+# Redirect browsers in Portugal to the Portuguese version of the website
+/  /pt   302  Country=pt
