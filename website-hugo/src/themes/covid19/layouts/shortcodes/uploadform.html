@@ -32,9 +32,9 @@
             </div>  
             
             <div class="question">
-                <label for="code">In case you got a code for covid19tracing.org</label>
+                <label for="token">In case you got a code for covid19tracing.org</label>
                 <div class="options">
-                    <input type="text" id="code" name="code" value="">
+                    <input type="text" id="token" name="token" value="">
                 </div>
             </div>             
         </div>
@@ -87,10 +87,13 @@
                 <div class="options">                    
                     <input class="form-control" type="file" id="file" name="file">
                 </div>
+                <p id="datafilterinformation"></p>
             </div>
         </div>
 
-        <button type="button" class="form-control" name="upload">Final step: Press here to share your filtered data with covid19tracing.org now.</button>
+        <button type="button" class="form-control" id="upload-btn" name="upload">Final step: Press here to share your filtered data with covid19tracing.org now.</button>
+        <div id="uploadinformation"></div>
+
         </form>
     </div>
 </div>

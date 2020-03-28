@@ -206,14 +206,14 @@ footer {
   button {
     border: 1px $orange solid;
     border-radius: 15px;
-    background: $gray-dark;
     padding: 1em;
     font-weight: bold;
-    color: $orange;
+    background: $gray-lightest;
+    color: black;
 
     &:hover {
-      background: $gray-lightest;
-      color: black;
+      color: $orange;
+      background: $gray-dark;
     }
   }
   
