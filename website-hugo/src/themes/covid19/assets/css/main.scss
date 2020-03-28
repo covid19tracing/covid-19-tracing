@@ -100,6 +100,16 @@ nav {
   }
 }
 
+footer {
+  hr {
+    border: 0;
+    border-bottom: 1px $gray-lightest solid;
+  }
+  li {
+    list-style: none;
+  }
+}
+
 .banner-container {
   width: 100%;
   padding: 0;
@@ -167,6 +177,47 @@ nav {
 }
 
 .upload {
+  
+  .questionblock {
+    margin-bottom: 1em;
+    border: 1px $gray-lightest solid;
+    padding: 1em;
+
+    &> label {
+      display: block;
+      font-size: 130%;
+      padding: 0.5em;
+    }
+
+    .question {
+      padding: 0.5em;
+
+      .options {
+        display: inline;
+
+        input {
+          margin-left: 1em;
+          padding: 0.5em;
+        }
+      }
+    }
+  }
+
+  button {
+    border: 1px $orange solid;
+    border-radius: 15px;
+    background: $gray-dark;
+    padding: 1em;
+    font-weight: bold;
+    color: $orange;
+
+    &:hover {
+      background: $gray-lightest;
+      color: black;
+    }
+  }
+  
+  
   .uploadstep {
     margin-top: 1em;
     border-top: 1px solid $gray-lightest;
@@ -174,11 +225,7 @@ nav {
     font-size: 120%;
     line-height: 150%;
     label {
-      display: block;
       margin-bottom: 1em;
-      &.samerow {
-        display: inline;
-      }
     }
     input {
       color: $gray-dark;

@@ -1,12 +1,16 @@
 ---
-title: "Upload a new case"
+title: "Upload your location history"
 date: 2019-11-29T20:28:05+01:00
 draft: false
 slug: newcase
 layout: upload
 ---
 
-# Upload a new trace
+# Upload your location history
+
+**We will never publish your raw data!**
+
+{{< uploadform >}}
 
 ## When can you upload a new trace?
 

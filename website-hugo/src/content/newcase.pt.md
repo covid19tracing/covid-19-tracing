@@ -8,6 +8,8 @@ layout: upload
 
 # Adicionar um novo caso
 
+{{< uploadform >}}
+
 ## Para adicionar um novo caso tem de:
 
 - Ter sido diagnosticado COVID-19 positivo por uma instituição oficial.

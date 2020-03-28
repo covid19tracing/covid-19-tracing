@@ -3,6 +3,7 @@ var filterDays = 15;
 var filteredLocations = [];
 var startDate;
 var endDate;
+var formState = {};
 
 function sendData(data) {
 
@@ -160,9 +161,71 @@ function handleSymptoms() {
     showArea('uploadfield');
 }
 
-document.getElementById('token').addEventListener('change', handleToken, false);
-document.getElementById('testedDate').addEventListener('change', handleTested, false);
-document.getElementById('symptomsDate').addEventListener('change', handleSymptoms, false);
-document.getElementById('nosymptoms').addEventListener('change', handleSymptoms, false);
-document.getElementById('file').addEventListener('change', handleFileSelect, false);
-document.getElementById('cf-submit').addEventListener('click', handleUpload, false);
+
+
+
+
+
+
+
+
+
+
+function getFormElement(name) {
+    return document.getElementById('uploadform').elements[name];
+}
+
+function getDateField(name) {
+    return new Date(getFormElement(name).value);
+}
+
+function getRadioState(name) {
+    let element = getFormElement(name).value || undefined;
+    let result = undefined;
+    if (element === "yes") {
+        result = true;
+    } else if (element === "no") {
+        result = false;
+    }
+    return result;
+}
+
+function setVisibility(name, visible) {
+    let el = document.getElementById(name).closest("div.question");
+    if (el && el.classList) {  
+        if (visible) {
+            el.classList.remove("hidden");
+        } else {
+            el.classList.add("hidden");
+        }
+    }
+}
+
+function updateFormVisibility() {
+    setVisibility("testedDate", formState["tested"]);
+    setVisibility("positiveoptions", formState["tested"]);
+    setVisibility("code", formState["tested"]);
+    setVisibility("symptomsDate", formState["symptoms"]);
+}
+
+function fetchFormState() {
+    formState["tested"] = getRadioState("tested");
+    formState["testedDate"] = getDateField("testedDate");
+    formState["positive"] = getRadioState("positive");
+    formState["code"] = getFormElement("code").value;
+
+    formState["symptoms"] = getRadioState("symptoms");    
+    formState["symptomsDate"] = getDateField("symptomsDate");    
+    formState["healthy"] = getRadioState("healthy");
+    
+    formState["email"] = getFormElement("email").value;
+}
+
+function formChangedHandler() {
+    fetchFormState();
+    updateFormVisibility();
+}
+
+document.querySelectorAll("input").forEach(function(el) {
+    el.addEventListener("change",formChangedHandler);
+});
