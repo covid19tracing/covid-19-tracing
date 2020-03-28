@@ -28,3 +28,8 @@ HUGO_VERSION = "0.60.1"
 
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"
+
+[[redirects]]
+from = "/"
+to = "/pt"
+conditions = {Language = ["Portuguese"], Country = ["pt"]}
