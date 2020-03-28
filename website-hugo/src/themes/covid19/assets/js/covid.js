@@ -1,18 +1,15 @@
-
 var filterDays = 15;
 var filteredLocations = [];
-var startDate;
-var endDate;
+var startDate = new Date();
+var endDate = new Date();
 var formState = {};
 
 function sendData(data) {
 
-    let token = getToken();
-
     console.log("start upload" + data);
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://europe-west3-covid-19-tracing.cloudfunctions.net/uploadLocation?token='+token, true);
+    xhr.open('POST', 'https://europe-west3-covid-19-tracing.cloudfunctions.net/uploadLocation', true);
     
     xhr.onload = function (e) {
       console.log(e.target.response);
@@ -35,23 +32,9 @@ function sendData(data) {
 
 }
 
-function showArea(areaID) {
-    document.getElementById(areaID).classList.remove("hidden");
-    window.scrollTo(0,document.body.scrollHeight);
-}
-
-function showInformation(areaID,toShow) {
-    document.getElementById(areaID).innerHTML = toShow;
-    showArea(areaID);
-}
-
-function isTokenValid(token) {
-    return token.length === 6;
-}
-
 function handleFileSelect(evt) {
 
-    showInformation('filteredinformation','{{ i18n "processing" }}');
+    showInformation('datafilterinformation','{{ i18n "processing" }}');
     var f = evt.target.files[0];
 
     const reader = new FileReader();  
@@ -76,16 +59,15 @@ function handleFileSelect(evt) {
             locationData.locations.length+' {{ i18n "locations_filtered" }}, '+filteredLocations.length
             + ' {{ i18n "locations_between" }} '+new Date(fromTimestamp).toDateString()+' {{ i18n "and" }} '+new Date(toTimestamp).toDateString()+' {{ i18n "found" }}';
         
-        showInformation('filteredinformation',info);
+        showInformation('datafilterinformation',info);
 
         locationData = null;
 
         if (filteredLocations.length == 0) {
-            document.getElementById('filteredinformation').innerHTML =
-                document.getElementById('filteredinformation').innerHTML + ' {{ i18n "nothing_to_upload" }}';
+            document.getElementById('datafilterinformation').innerHTML =
+                document.getElementById('datafilterinformation').innerHTML + ' {{ i18n "nothing_to_upload" }}';
         } else {
-            showArea('upload');
-            document.getElementById('cf-submit').innerHTML = '{{ i18n "upload" }} '+filteredLocations.length+' {{ i18n "share_data" }}'
+            document.getElementById('upload-btn').innerHTML = '{{ i18n "upload" }} '+filteredLocations.length+' {{ i18n "share_data" }}'
         }
 
     };
@@ -95,81 +77,66 @@ function handleFileSelect(evt) {
 }
 
 function handleUpload() {
-    showArea('upload');
     showInformation('uploadinformation','{{ i18n "uploading" }}');
-
-    let symptoms = getSymptomsDate();
 
     sendData({
         "locations": filteredLocations,
-        "tested": getTestedDate().getTime(),
-        "symptoms": (symptoms !== null ? symptoms.getTime() : null)
+        "tested" : formState["tested"],
+        "testedDate" : formState["testedDate"].getTime() || undefined,
+        "positive" : formState["positive"],
+        "token" : formState["token"],
+        "symptoms" : formState["symptoms"], 
+        "symptomsDate" : formState["symptomsDate"].getTime() || undefined,
+        "healthy" : formState["healthy"],
+        "email" : formState["email"]
     });
 }
 
-function getTestedDate() {
-    return new Date(document.getElementById('testedDate').value + ' 00:00:00');
-}
-
-function getSymptomsDate() {
-    if (document.getElementById('nosymptoms').checked) {
-        return null;
-    } else {
-        return new Date(document.getElementById('symptomsDate').value + ' 00:00:00');
-    }
-}
-
-function handleTested(evt) {
-    let testedDate = getTestedDate();
-    let now = new Date();
-    if (testedDate > now) {
-        alert('{{ i18n "fail_test_future" }}');
-    } else {
-        showArea('symptoms');
-    }
-}
-
-function getToken() {
-    let token = document.getElementById('token').value;
-    return token.replace(/[^a-zA-Z0-9]/g, '');
-}
-
-function handleToken() {
-    let token = getToken();
-    if (!isTokenValid(token)) {
-        alert('{{ i18n "fail_code_not_valid" }}');
-    }
-}
-
-function handleSymptoms() {
-    let testedDate = getTestedDate();
-    let symptomsDate = getSymptomsDate();
-    let now = new Date();
-    if (symptomsDate !== null && symptomsDate > now) {
+function validateData() {
+    if (formState['symptomsDate'] && formState['symptomsDate'] > new Date()) {
         alert('{{ i18n "fail_symptoms_in_future" }}');
     }
-    endDate = new Date(testedDate);
-    startDate = new Date(testedDate);
-    if (symptomsDate !== null && testedDate > symptomsDate) {
-        startDate = symptomsDate;
+    if (formState['token'].length && formState['token'].replace(/[^a-zA-Z0-9]/g, '').length != 6) {
+        alert('{{ i18n "fail_code_not_valid" }}');
     }
-    startDate.setDate(startDate.getDate() - filterDays);
-
-    let info = '{{ i18n "upload_your_between" }} ' + startDate.toDateString() + ' {{ i18n "and" }} ' + endDate.toDateString();
-
-    showInformation('daterangeinfo',info);
-    showArea('uploadfield');
+    if (formState['testedDate'] && formState['testedDate'] > new Date()) {
+        alert('{{ i18n "fail_test_future" }}');
+    }
 }
 
+function showArea(areaID) {
+    document.getElementById(areaID).classList.remove("hidden");
+}
 
+function showInformation(areaID,toShow) {
+    document.getElementById(areaID).innerHTML = toShow;
+    showArea(areaID);
+}
 
+function updateLocationFilterDates() {
+    let testedDate = !isNaN(formState["testedDate"].getTime()) ? formState["testedDate"] : false;
+    let symptomsDate = !isNaN(formState["symptomsDate"].getTime()) ? formState["symptomsDate"] : false;
 
+    if (testedDate) {
+        endDate = testedDate;
 
+        if (symptomsDate && testedDate > symptomsDate) {
+            endDate = symptomsDate;
+        }
+    } else {
+        if (symptomsDate) {
+            endDate = symptomsDate;
+        } else {
+            endDate = new Date();
+        }
+    }
+    startDate.setDate(endDate.getDate() - filterDays);
 
-
-
-
-
+    if (startDate && endDate) {
+        let info = '{{ i18n "upload_your_between" }} ' + startDate.toDateString() + ' {{ i18n "and" }} ' + endDate.toDateString();
+        showInformation("datafilterinformation", info);
+    }
+}
 
 function getFormElement(name) {
     return document.getElementById('uploadform').elements[name];
@@ -190,7 +157,7 @@ function getRadioState(name) {
     return result;
 }
 
-function setVisibility(name, visible) {
+function setQuestionVisibility(name, visible) {
     let el = document.getElementById(name).closest("div.question");
     if (el && el.classList) {  
         if (visible) {
@@ -202,17 +169,17 @@ function setVisibility(name, visible) {
 }
 
 function updateFormVisibility() {
-    setVisibility("testedDate", formState["tested"]);
-    setVisibility("positiveoptions", formState["tested"]);
-    setVisibility("code", formState["tested"]);
-    setVisibility("symptomsDate", formState["symptoms"]);
+    setQuestionVisibility("testedDate", formState["tested"]);
+    setQuestionVisibility("positiveoptions", formState["tested"]);
+    setQuestionVisibility("token", formState["tested"]);
+    setQuestionVisibility("symptomsDate", formState["symptoms"]);
 }
 
 function fetchFormState() {
     formState["tested"] = getRadioState("tested");
     formState["testedDate"] = getDateField("testedDate");
     formState["positive"] = getRadioState("positive");
-    formState["code"] = getFormElement("code").value;
+    formState["token"] = getFormElement("token").value;
 
     formState["symptoms"] = getRadioState("symptoms");    
     formState["symptomsDate"] = getDateField("symptomsDate");    
@@ -224,8 +191,15 @@ function fetchFormState() {
 function formChangedHandler() {
     fetchFormState();
     updateFormVisibility();
+    updateLocationFilterDates();
+    validateData();
 }
 
-document.querySelectorAll("input").forEach(function(el) {
-    el.addEventListener("change",formChangedHandler);
-});
+(function init() {
+    document.querySelectorAll("input").forEach(function(el) {
+        el.addEventListener("change",formChangedHandler);
+    });
+    document.getElementById('upload-btn').addEventListener("click",handleUpload);
+    document.getElementById('file').addEventListener("change",handleFileSelect);
+    formChangedHandler();
+})();
