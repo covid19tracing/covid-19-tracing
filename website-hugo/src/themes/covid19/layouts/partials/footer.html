@@ -15,4 +15,17 @@
             </select>
         </div>
     </div>
+    <script>
+        function setLanguageCookie() {
+            document.cookie = "nf_country= ; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+            document.cookie = "nf_country=disabled; expires=Thu, 18 Dec 2030 12:00:00 UTC;";
+        }
+
+
+        function changeLanguage(obj){
+            let href = obj.options[obj.selectedIndex].getAttribute('value');
+            setLanguageCookie();
+            window.location = href;
+        }
+    </script>
 </footer>
