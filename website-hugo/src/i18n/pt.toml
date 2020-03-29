@@ -93,3 +93,6 @@ other = "Acompanhe o nosso projecto. Enviamos email se tivermos novidades"
 
 [newsletter_email_msg]
 other = "Endereço de Email"
+
+[language]
+other = "Lingua"

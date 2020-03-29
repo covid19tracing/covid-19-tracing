@@ -88,3 +88,6 @@ other = "We are working on the project - Subscribe and get updates when we achie
 
 [newsletter_email_msg]
 other = "Email address"
+
+[language]
+other = "Language"
