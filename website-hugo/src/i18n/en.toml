@@ -82,3 +82,12 @@ other = "Sorry, symptoms in the future? Check your symptoms date, please."
 
 [upload_your_between]
 other = "We will filter your data and upload data between"
+
+[newsletter_msg]
+other = "Subscribe to our project. We will let you know once we have news"
+
+[newsletter_email_msg]
+other = "Email Address"
+
+[language]
+other = "Language"
