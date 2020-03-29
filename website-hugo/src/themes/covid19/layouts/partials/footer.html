@@ -8,7 +8,7 @@
                     {{ .Site.Language.LanguageName }}
                 </option>
                 {{ range .Translations }}
-                    <option value="{{ .Permalink }}">
+                    <option data-href="{{ .Permalink }}" value="{{ .Site.Language.Params.languageCode }}">
                         {{ .Site.Language.Params.languageName }}
                     </option>
                 {{ end }}
@@ -17,15 +17,12 @@
     </div>
     <script>
         function setLanguageCookie() {
-            document.cookie = "nf_country= ; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-            document.cookie = "nf_country=disabled; expires=Thu, 18 Dec 2030 12:00:00 UTC; SameSite=None";
+            document.cookie = "nf_country=disabled; expires=Thu, 18 Dec 2021 12:00:00 UTC; path=/";
         }
-
-
         function changeLanguage(obj){
-            let href = obj.options[obj.selectedIndex].getAttribute('value');
-            setLanguageCookie();
-            window.location = href;
+            let href = obj.options[obj.selectedIndex].getAttribute('data-href');
+            setLanguageCookie()
+            window.location= href;
         }
     </script>
 </footer>
