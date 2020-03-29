@@ -59,7 +59,7 @@
             </div>        
 
             <div class="question">
-                <label for="healthyoptions">Do you feel healthy right now?</label>
+                <label for="healthyoptions">Have you been in contact with someone that is COVID-19 positive in the last 20 days?</label>
                 <div id="healthyoptions" class="options">
                     <input type="radio" id="healthyyes" name="healthy" value="yes">
                     <label for="healthyyes">yes</label>
@@ -70,18 +70,9 @@
         </div>
 
         <div class="questionblock">
-            <label>Contact:</label>
-            <div class="question">
-                <label for="email">Email Address (OPTIONAL):</label>
-                <div class="options">
-                    <input type="email" id="email" name="email" value="">
-                </div>
-                <p>Specify your email address if you want to be informed in case we discover anything relevant with your data, e.g. you have been at very infectious places.</p>
-            </div>
-        </div>
-
-        <div class="questionblock">
-            <label>Google Location History</label>
+            <label>
+                Google Location History
+            </label>
             <div class="question">
                 <label for="file">{{ i18n "select_location_file" }} <b>Location History.json</b></label>
                 <div class="options">                    
@@ -89,6 +80,7 @@
                 </div>
                 <p id="datafilterinformation"></p>
             </div>
+            *<a href="/howto" target="_blank">see our step-by-step guide on how to do download the Location History.json file</a>
         </div>
 
         <button type="button" class="form-control" id="upload-btn" name="upload">Final step: Press here to share your filtered data with covid19tracing.org now.</button>
