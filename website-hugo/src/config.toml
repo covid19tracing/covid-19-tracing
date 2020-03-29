@@ -29,7 +29,7 @@ defaultContentLanguage = "en"
       weight = 2
 
     [[languages.en.menu.main]]
-      name = "Add new case"
+      name = "Share your data"
       identifier = "newcase"
       url = "/newcase/"
       weight = 3

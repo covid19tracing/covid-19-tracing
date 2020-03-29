@@ -1,0 +1,94 @@
+<div class="content-container">
+    <div class="content upload">
+        <form id="uploadform">
+
+        <div class="questionblock">
+            <label>Official test</label>
+            <div class="question">
+                <label for="testedoptions">Have you been tested for COVID-19?</label>
+                <div id="testedoptions" class="options">
+                    <input type="radio" id="testedyes" name="tested" value="yes">
+                    <label for="testedyes">yes</label>
+                    <input type="radio" id="testedno" name="tested" value="no">
+                    <label for="testedno">no</label>
+                </div>
+            </div>    
+
+            <div class="question">
+                <label for="testedDate">When was the test performed?</label>
+                <div class="options">
+                    <input type="date" id="testedDate" name="testedDate" value="">
+                </div>
+            </div>
+    
+            <div class="question">
+                <label for="positiveoptions">Have you been tested COVID-19 positive?</label>
+                <div id="positiveoptions" class="options">
+                    <input type="radio" id="positiveyes" name="positive" value="yes">
+                    <label for="positiveyes">yes</label>
+                    <input type="radio" id="positiveno" name="positive" value="no">
+                    <label for="positiveno">no</label>
+                </div>
+            </div>  
+            
+            <div class="question">
+                <label for="token">In case you got a code for covid19tracing.org</label>
+                <div class="options">
+                    <input type="text" id="token" name="token" value="">
+                </div>
+            </div>             
+        </div>
+
+        <div class="questionblock">
+            <label>Your health</label>
+            <div class="question">
+                <label for="symptomsoptions">Have you experienced any COVID-19 symptoms?</label>
+                <div id="symptomsoptions" class="options">
+                    <input type="radio" id="symptomsyes" name="symptoms" value="yes">
+                    <label for="symptomsyes">yes</label>
+                    <input type="radio" id="symptomsno" name="symptoms" value="no">
+                    <label for="symptomsno">no</label>
+                </div>
+            </div>     
+            
+            <div class="question">
+                <label for="symptomsDate">When have you experienced symptoms the first time?</label>
+                <div class="options">
+                    <input type="date" id="symptomsDate" name="symptomsDate" value="">
+                </div>
+            </div>        
+
+            <div class="question">
+                <label for="contactoptions">Have you been in contact with someone that is COVID-19 positive in the last 20 days?</label>
+                <div id="contactoptions" class="options">
+                    <input type="radio" id="contactyes" name="contact" value="yes">
+                    <label for="contactyes">yes</label>
+                    <input type="radio" id="contactno" name="contact" value="no">
+                    <label for="contactno">no</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="questionblock">
+            <label>
+                Google Location History <span class="small">(<a href="/howto" target="_blank">see our step-by-step guide on how to do download the Location History.json file from Google</a>)</span>
+            </label>
+            <div class="question">
+                <label for="file">{{ i18n "select_location_file" }} <b>Location History.json</b></label>
+                <div class="options">                    
+                    <input class="form-control" type="file" id="file" name="file">
+                </div>
+                <p id="datafilterinformation"></p>
+            </div>
+            
+        </div>
+
+        <div>
+            <div id="uploadinformation" class="informationbox"></div>
+            <button type="button" class="form-control" id="upload-btn" name="upload">Final step: Press here to share your filtered data with covid19tracing.org now.</button>
+        </div>
+
+
+        </form>
+    </div>
+</div>
