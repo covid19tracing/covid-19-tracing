@@ -16,14 +16,17 @@ function sendData(data) {
       let msg = '{{ i18n "upload_data_sucess" }}';
       if (xhr.status == 403) {
           msg = '{{ i18n "upload_token_fail" }}';
+          setElementVisibility('upload-btn', true)
       }
       if (xhr.status == 400) {
           msg = '{{ i18n "upload_data_fail" }}';
+          setElementVisibility('upload-btn', true)
       }
       showInformation('uploadinformation',msg);
     };
 
     xhr.onerror = function() {
+        setElementVisibility('upload-btn', true)
         alert('{{ i18n "upload_data_fail_network" }}');
         showInformation('uploadinformation','{{ i18n "upload_failed" }}');
     };
@@ -77,19 +80,23 @@ function handleFileSelect(evt) {
 }
 
 function handleUpload() {
-    showInformation('uploadinformation','{{ i18n "uploading" }}');
+    if (filteredLocations.length) {
+        setElementVisibility('upload-btn', false)
+        showInformation('uploadinformation','{{ i18n "uploading" }}');
 
-    sendData({
-        "locations": filteredLocations,
-        "tested" : formState["tested"],
-        "testedDate" : formState["testedDate"].getTime() || undefined,
-        "positive" : formState["positive"],
-        "token" : formState["token"],
-        "symptoms" : formState["symptoms"], 
-        "symptomsDate" : formState["symptomsDate"].getTime() || undefined,
-        "healthy" : formState["healthy"],
-        "email" : formState["email"]
-    });
+        sendData({
+            "locations": filteredLocations,
+            "tested" : formState["tested"],
+            "testedDate" : formState["testedDate"].getTime() || undefined,
+            "positive" : formState["positive"],
+            "token" : formState["token"],
+            "symptoms" : formState["symptoms"], 
+            "symptomsDate" : formState["symptomsDate"].getTime() || undefined,
+            "contact" : formState["contact"]
+        });
+    } else {
+        alert("not data to upload...sorry");
+    }
 }
 
 function validateData() {
@@ -130,7 +137,7 @@ function updateLocationFilterDates() {
             endDate = new Date();
         }
     }
-    startDate.setDate(endDate.getDate() - filterDays);
+    startDate.setTime(endDate.getTime() - (filterDays * 24 * 60 * 60 * 1000));
 
     if (startDate && endDate) {
         let info = '{{ i18n "upload_your_between" }} ' + startDate.toDateString() + ' {{ i18n "and" }} ' + endDate.toDateString();
@@ -159,6 +166,13 @@ function getRadioState(name) {
 
 function setQuestionVisibility(name, visible) {
     let el = document.getElementById(name).closest("div.question");
+    setElementVisibility(el, visible);
+}
+
+function setElementVisibility(el, visible) {
+    if ((typeof el) === 'string') {
+        el = document.getElementById(el);
+    }
     if (el && el.classList) {  
         if (visible) {
             el.classList.remove("hidden");
@@ -183,9 +197,7 @@ function fetchFormState() {
 
     formState["symptoms"] = getRadioState("symptoms");    
     formState["symptomsDate"] = getDateField("symptomsDate");    
-    formState["healthy"] = getRadioState("healthy");
-    
-    formState["email"] = getFormElement("email").value;
+    formState["contact"] = getRadioState("contact");
 }
 
 function formChangedHandler() {
