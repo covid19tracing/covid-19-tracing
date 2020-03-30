@@ -1,0 +1,111 @@
+#####################################
+# Home Page
+#####################################
+
+[small_banner_title]
+other = "GEMEINSAM GEGEN DAS VIRUS"
+
+[open_map]
+other = "Karte öffnen"
+
+#####################################
+# Upload Page
+#####################################
+
+[official_test]
+other = "Offizieller test"
+
+[have_you_been_tested]
+other = "Wurdest du auf COVID-19 getestet?"
+
+[when_tested]
+other = "Wann wurde der Test durchgeführt?"
+
+[tested_positive]
+other = "War dein COVID-19 test positiv?"
+
+[insert_token]
+other = "Wenn du einen Code für covid19tracing.org erhalten hast"
+
+[your_health]
+other = "Gesundheitszustand"
+
+[experienced_symptoms]
+other = "Hattest du bisher COVID-19 Symptome?"
+
+[when_first_symptoms]
+other = "Wann hattest du die ersten Symptome?"
+
+[in_contact_with_positive_covid]
+other = "Warst du in den letzten 15 Tagen in Kontakt mit Personen, die COVID-19 positiv waren?"
+
+[see_step_guide]
+other = "siehe auch unsere Schritt für Schritt Anleitung zum Download der Daten bei Google"
+
+[select_location_file]
+other = "Wähle die Google Takeout Datei aus"
+
+[send_form]
+other = "Finaler Schritt: Klicke hier um deine Daten hochzuladen und mit covid19tracing.org zu teilen."
+
+[upload_data_sucess]
+other = "Deine Standortdaten wurde erfolgreich hochgeladen. Vielen Dank für deine Mithilfe zum Kampf gegen das Virus. Deine Daten werden bald in die Karte einfließen."
+
+[upload_data_fail]
+other = "Uups, da gab es ein Problem beim Hochladen. Bitte wende dich an info@covid19tracing.org"
+
+[upload_token_fail]
+other = "Uups, dein Code wurde leider nicht akzeptiert. Wende dich bitte an info@covid19tracing.org"
+
+[upload_data_fail_network]
+other = "Uups, da ist etwas schief gegangen. Ist deine Internet Verbindung in Ordnung?"
+
+[upload_failed]
+other = "Hochladen fehlgeschlagen."
+
+[processing]
+other = "PRÜFEN DER DATEN, BITTE WARTEN..."
+
+[locations_filtered]
+other = "{0} Standorte gefiltert, {1} Standorte zwischen {2} und {3} gefunden"
+
+[nothing_to_upload]
+other = "... leider nichts zum Hochladen gefunden."
+
+[upload_and_share]
+other = "Finaler Schritt: Klicke hier um {0} Standorte hochzuladen und mit covid19tracing.org zu teilen."
+
+[uploading]
+other = "HOCHLADEN..."
+
+[fail_test_future]
+other = "Uuups, ein Testdatum in der Zukunft?"
+
+[fail_code_not_valid]
+other = "Sorry, dein Code scheint nicht gültig zu sein!"
+
+[fail_symptoms_in_future]
+other = "Uuups, Symptome in der Zukunft? Bitte überprüfe das Datum."
+
+[upload_your_between]
+other = "Wir filtern deine Daten auf Standorte zwischen {0} und {1}"
+
+#####################################
+# General
+#####################################
+
+[newsletter_msg]
+other = "Projektnewsletter: Wir informieren dich, sobald wir Neuigkeiten haben."
+
+[newsletter_email_msg]
+other = "Email Adresse"
+
+[language]
+other = "Sprache"
+
+[yes]
+other = "ja"
+
+[no]
+other = "Nein"
+

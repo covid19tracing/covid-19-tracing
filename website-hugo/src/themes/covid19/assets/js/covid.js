@@ -67,8 +67,11 @@ function handleFileSelect(evt) {
         console.log('locations filtered: '+filteredLocations.length);
 
         var info =
-            locationData.locations.length+' {{ i18n "locations_filtered" }}, '+filteredLocations.length
-            + ' {{ i18n "locations_between" }} '+new Date(fromTimestamp).toDateString()+' {{ i18n "and" }} '+new Date(toTimestamp).toDateString()+' {{ i18n "found" }}';
+            '{{ i18n "locations_filtered" }}'
+            .replace('{0}',locationData.locations.length)
+            .replace('{1}',filteredLocations.length)
+            .replace('{2}',new Date(fromTimestamp).toDateString())
+            .replace('{3}',new Date(toTimestamp).toDateString());
         
         showInformation('datafilterinformation',info);
 
@@ -78,8 +81,9 @@ function handleFileSelect(evt) {
             document.getElementById('datafilterinformation').innerHTML =
                 document.getElementById('datafilterinformation').innerHTML + ' {{ i18n "nothing_to_upload" }}';
         } else {
-            document.getElementById('upload-btn').innerHTML = '{{ i18n "upload" }} '+filteredLocations.length+' {{ i18n "share_data" }}'
-        }
+            document.getElementById('upload-btn').innerHTML =
+                '{{ i18n "upload_and_share" }} '.replace('{0}',filteredLocations.length);
+        } 
 
     };
 
@@ -149,7 +153,9 @@ function updateLocationFilterDates() {
     startDate.setTime(endDate.getTime() - (filterDays * 24 * 60 * 60 * 1000));
 
     if (startDate && endDate) {
-        let info = '{{ i18n "upload_your_between" }} ' + startDate.toDateString() + ' {{ i18n "and" }} ' + endDate.toDateString();
+        let info = '{{ i18n "upload_your_between" }}'
+            .replace('{0}',startDate.toDateString())
+            .replace('{1}',endDate.toDateString());
         showInformation("datafilterinformation", info);
     }
 }

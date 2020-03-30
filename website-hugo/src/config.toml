@@ -56,3 +56,25 @@ defaultContentLanguage = "en"
       identifier = "newcase"
       url = "/pt/newcase/"
       weight = 3
+
+[languages.de]
+    languageName = "Deutsch"
+    languageCode = "de"
+    weight = 1
+      [[languages.de.menu.main]]
+      identifier = "about"
+      name = "Über uns"
+      url = "/about/"
+      weight = 1
+
+    [[languages.de.menu.main]]
+      identifier = "map"
+      name = "Karte"
+      url = "/map/"
+      weight = 2
+
+    [[languages.de.menu.main]]
+      name = "Teile deine Daten"
+      identifier = "newcase"
+      url = "/newcase/"
+      weight = 3      

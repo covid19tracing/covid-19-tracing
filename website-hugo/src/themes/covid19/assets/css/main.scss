@@ -150,12 +150,17 @@ footer {
 
 .content-container {
   display: flex;
+
+  @media (max-width: $breakpoint-tablet) {
+    display: block;
+  }
+
   justify-content: center;
   margin-top: 1em;
   .content {
     width: $content-width-full;
     @media (max-width: $breakpoint-tablet) {
-      width: 100%;
+      width: inherit;
       padding: 1em;
     }
     p {
@@ -177,6 +182,8 @@ footer {
 }
 
 .upload {
+
+  margin-bottom: 2em;
   
   .questionblock {
     margin-bottom: 1em;
@@ -196,8 +203,16 @@ footer {
     .question {
       padding: 0.5em;
 
+      &> label {
+        line-height: 150%;
+      }
+
       .options {
         display: inline;
+        @media (max-width: $breakpoint-tablet) {
+          display: block;
+          margin-top: 1em;
+        }
 
         input {
           margin-left: 1em;
@@ -251,8 +266,15 @@ footer {
   }
 }
 
+footer {
+  margin-bottom: 1em;
+}
 
 .hidden {
   display: none;
 }
 
+#mc_embed_signup {
+  margin: 1em;
+  width: inherit !important;
+}

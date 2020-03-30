@@ -36,9 +36,6 @@ other = "Tem sentido sintomas de COVID-19?"
 [when_first_symptoms]
 other = "Quando sentiu os primeiros sintomas?"
 
-[i_had_no_symptoms]
-other = "Não tive nenhum sintoma até á data"
-
 [in_contact_with_positive_covid]
 other = "Teve em contacto com alguém confirmado COVID-19 positivo nos ultimos 15 dias?"
 
@@ -84,22 +81,13 @@ other = "Envio Falhou."
 other = "PROCESSANDO..."
 
 [locations_filtered]
-other = "localizações filtradas"
-
-[locations_between]
-other = "localizações entre"
-
-[found]
-other = "encontrados"
+other = "{0} localizações filtradas, {1} localizações entre {2} e {3} encontrados"
 
 [nothing_to_upload]
 other = "Pedimos descula, mas não encontramos nenhuma informação para enviar."
 
-[upload]
-other = "enviar"
-
-[share_data]
-other = "informação de localização para Covid19tracing.org ..."
+[upload_and_share]
+other = "enviar {0} informação de localização para Covid19tracing.org ..."
 
 [uploading]
 other = "A ENVIAR..."
@@ -114,7 +102,7 @@ other = "Pedimos desculpa, mas o seu código não é válido!"
 other = "Inseriou uma data de sintomas no futuro?"
 
 [upload_your_between]
-other = "Vamos somente enviar a sua informação de localização pertencente às datas entre"
+other = "Vamos somente enviar a sua informação de localização pertencente às datas entre {0} e {1}"
 
 
 #####################################
@@ -129,9 +117,6 @@ other = "Endereço de Email"
 
 [language]
 other = "Language"
-
-[and]
-other = "e"
 
 [yes]
 other = "sim"

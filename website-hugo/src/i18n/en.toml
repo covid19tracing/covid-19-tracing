@@ -36,9 +36,6 @@ other = "Have you experienced any COVID-19 symptoms?"
 [when_first_symptoms]
 other = "When have you experienced your first symptoms?"
 
-[i_had_no_symptoms]
-other = "I haven't experienced any symptoms"
-
 [in_contact_with_positive_covid]
 other = "Have you been in contact with someone that is COVID-19 positive in the last 15 days?"
 
@@ -76,25 +73,16 @@ other = "Sorry, we couldnt upload your data. Is your network down?"
 other = "Upload failed."
 
 [processing]
-other = "PROCESSING..."
+other = "PROCESSING, PLEASE WAIT..."
 
 [locations_filtered]
-other = "locations filtered"
-
-[locations_between]
-other = "locations between"
-
-[found]
-other = "found"
+other = "{0} locations filtered, {1} locations between {2} and {3} found"
 
 [nothing_to_upload]
 other = "Sorry, nothing to upload."
 
-[upload]
-other = "upload"
-
-[share_data]
-other = "location data and share the data with Covid19tracing.org ..."
+[upload_and_share]
+other = "Final step: Press here to upload {0} location data and share the data with Covid19tracing.org ..."
 
 [uploading]
 other = "UPLOADING..."
@@ -109,7 +97,7 @@ other = "Sorry, your code is not valid!"
 other = "Sorry, symptoms in the future? Check your symptoms date, please."
 
 [upload_your_between]
-other = "We will filter your data and upload data between"
+other = "We will filter your data and upload data between {0} and {1}"
 
 #####################################
 # General
@@ -123,9 +111,6 @@ other = "Email Address"
 
 [language]
 other = "Language"
-
-[and]
-other = "and"
 
 [yes]
 other = "yes"
