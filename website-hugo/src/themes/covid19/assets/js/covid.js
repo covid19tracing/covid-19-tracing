@@ -82,6 +82,11 @@ function handleFileSelect(evt) {
 function handleUpload() {
     if (filteredLocations.length) {
         setElementVisibility('upload-btn', false)
+        
+        let token = formState["token"] ? formState["token"] : Date.now().toString(16);
+        showArea("code");
+        showInformation("codevalue", token);
+        
         showInformation('uploadinformation','{{ i18n "uploading" }}');
 
         sendData({
@@ -89,13 +94,13 @@ function handleUpload() {
             "tested" : formState["tested"],
             "testedDate" : formState["testedDate"].getTime() || undefined,
             "positive" : formState["positive"],
-            "token" : formState["token"],
+            "token" : token,
             "symptoms" : formState["symptoms"], 
             "symptomsDate" : formState["symptomsDate"].getTime() || undefined,
             "contact" : formState["contact"]
         });
     } else {
-        alert("not data to upload...sorry");
+        alert('{{ i18n "nothing_to_upload" }}');
     }
 }
 
