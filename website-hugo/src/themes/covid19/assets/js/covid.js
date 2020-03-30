@@ -12,17 +12,25 @@ function sendData(data) {
     xhr.open('POST', 'https://europe-west3-covid-19-tracing.cloudfunctions.net/uploadLocation', true);
     
     xhr.onload = function (e) {
-      console.log(e.target.response);
       let msg = '{{ i18n "upload_data_sucess" }}';
+      let status = '{{ i18n "upload_sucess" }}';
       if (xhr.status == 403) {
           msg = '{{ i18n "upload_token_fail" }}';
           setElementVisibility('upload-btn', true)
+          status = '{{ i18n "upload_failed" }}';
       }
       if (xhr.status == 400) {
           msg = '{{ i18n "upload_data_fail" }}';
-          setElementVisibility('upload-btn', true)
+          setElementVisibility('upload-btn', true);
+          status = '{{ i18n "upload_failed" }}';
       }
+      showInformation('uploadstatus',status);
       showInformation('uploadinformation',msg);
+      if (xhr.status == 200) {
+        let response = JSON.parse(xhr.responseText);
+        showArea("code");
+        showInformation("codevalue", response["filetoken"]);
+      }
     };
 
     xhr.onerror = function() {
@@ -82,19 +90,15 @@ function handleFileSelect(evt) {
 function handleUpload() {
     if (filteredLocations.length) {
         setElementVisibility('upload-btn', false)
-        
-        let token = formState["token"] ? formState["token"] : Date.now().toString(16);
-        showArea("code");
-        showInformation("codevalue", token);
-        
-        showInformation('uploadinformation','{{ i18n "uploading" }}');
+        showArea("response");
+        showInformation('uploadstatus','{{ i18n "uploading" }}');
 
         sendData({
             "locations": filteredLocations,
             "tested" : formState["tested"],
             "testedDate" : formState["testedDate"].getTime() || undefined,
             "positive" : formState["positive"],
-            "token" : token,
+            "token" : formState["token"],
             "symptoms" : formState["symptoms"], 
             "symptomsDate" : formState["symptomsDate"].getTime() || undefined,
             "contact" : formState["contact"]

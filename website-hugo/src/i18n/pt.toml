@@ -57,9 +57,12 @@ other = "Por favor guarde este código"
 [save_token_explanation]
 other = "Poderá usar este código mais tarde para verificar ou apagar a sua informação."
 
+[upload_sucess]
+other = "A sua localização foi enviada com sucesso"
+
 [upload_data_sucess]
 other = """
-A sua localização foi enviada com sucesso. Obrigado pela sua contribuição para combater este virus.
+Obrigado pela sua contribuição para combater este virus.
 A sua informação será anonimizada e inserida no mapa brevemente.
 """
 

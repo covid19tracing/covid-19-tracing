@@ -83,18 +83,25 @@
             
         </div>
 
-        <div class="questionblock hidden" id="code">
+        <div class="questionblock hidden" id="response">
             <label>
-                {{ i18n "save_token" }}: <b id="codevalue"></b>
+                <div id="uploadstatus" class="informationbox"></div>
             </label>
+
             <div class="question">
-                <label for="file">{{ i18n "save_token_explanation" }}</label>
+                <div id="uploadinformation" class="informationbox"></div>
+            </div>
+
+            <div class="question hidden" id="code">
+                <div class="informationbox">
+                    {{ i18n "save_token" }}: <b id="codevalue"></b>
+                    <p>{{ i18n "save_token_explanation" }}</p>
+                </div>
             </div>
             
         </div>
 
         <div>
-            <div id="uploadinformation" class="informationbox"></div>
             <button type="button" class="form-control" id="upload-btn" name="upload">{{ i18n "send_form" }}</button>
         </div>
 

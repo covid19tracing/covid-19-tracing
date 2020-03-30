@@ -55,10 +55,13 @@ other = "Final step: Press here to share your filtered data with covid19tracing.
 other = "Please save this code"
 
 [save_token_explanation]
-other = "You can use this code later on if you want to check our delete your data"
+other = "You can use this code later on if you want to check or delete your data"
+
+[upload_sucess]
+other = "Your location data was uploaded successfully"
 
 [upload_data_sucess]
-other = "Your location data was uploaded successfully. Thanks a lot for your contribution to fight the virus. Your anonymized data will be integrated in the map soon."
+other = "Thanks a lot for your contribution to fight the virus. Your anonymized data will be integrated in the map soon."
 
 [upload_data_fail]
 other = "Sorry. There was a problem with the data you uploaded. Please contact us at info@covid19tracing.org for assistance"
