@@ -1,21 +1,37 @@
+#####################################
+# Home Page
+#####################################
+
 [small_banner_title]
 other = "LET'S FIGHT THE VIRUS TOGETHER"
 
 [open_map]
 other = "Open Map"
 
-[upload_description]
-other = """
-We will upload only the last 15 days of your location history.
-Your data will be anonymized and merged with other people's uploads.
-We will never publish your raw data! Please fill out the form below.
-"""
+#####################################
+# Upload Page
+#####################################
+
+[official_test]
+other = "Official test"
+
+[have_you_been_tested]
+other = "Have you been tested for COVID-19?"
+
+[when_tested]
+other = "When was the test performed?"
+
+[tested_positive]
+other = "Have you been tested COVID-19 positive?"
 
 [insert_token]
-other = "Please insert the code you have got (use the code Testit for testing purposes):"
+other = "In case you got a code for covid19tracing.org"
 
-[when_tested_positive]
-other = "When have you been tested positive?"
+[your_health]
+other = "Your Health"
+
+[experienced_symptoms]
+other = "Have you experienced any COVID-19 symptoms?"
 
 [when_first_symptoms]
 other = "When have you experienced your first symptoms?"
@@ -23,11 +39,17 @@ other = "When have you experienced your first symptoms?"
 [i_had_no_symptoms]
 other = "I haven't experienced any symptoms"
 
+[in_contact_with_positive_covid]
+other = "Have you been in contact with someone that is COVID-19 positive in the last 15 days?"
+
+[see_step_guide]
+other = "see our step-by-step guide on how to do download the Location History.json file from Google"
+
 [select_location_file]
 other = "Select your Google Takeout file"
 
-[upload_data]
-other = "Upload your data"
+[send_form]
+other = "Final step: Press here to share your filtered data with covid19tracing.org now."
 
 [upload_data_sucess]
 other = "Your location data was uploaded successfully. Thanks a lot for your contribution to fight the virus. Your anonymized data will be integrated in the map soon."
@@ -52,9 +74,6 @@ other = "locations filtered"
 
 [locations_between]
 other = "locations between"
-
-[and]
-other = "and"
 
 [found]
 other = "found"
@@ -83,6 +102,10 @@ other = "Sorry, symptoms in the future? Check your symptoms date, please."
 [upload_your_between]
 other = "We will filter your data and upload data between"
 
+#####################################
+# General
+#####################################
+
 [newsletter_msg]
 other = "Subscribe to our project. We will let you know once we have news"
 
@@ -91,3 +114,13 @@ other = "Email Address"
 
 [language]
 other = "Language"
+
+[and]
+other = "and"
+
+[yes]
+other = "yes"
+
+[no]
+other = "no"
+

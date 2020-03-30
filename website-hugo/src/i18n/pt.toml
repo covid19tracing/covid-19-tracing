@@ -1,21 +1,37 @@
+#####################################
+# Home Page
+#####################################
+
 [small_banner_title]
 other = "VAMOS VENCER O VIRUS JUNTOS"
 
 [open_map]
 other = "Ver Mapa"
 
-[upload_description]
-other = """
-Apenas os últimos 15 dias do seu histórico de localizações serão enviados.
-Os seus dados serão anonimizados e agregados com as localizações de outras pessoas.
-Por favor, preencha o formulário abaixo.
-"""
+#####################################
+# Upload Page
+#####################################
+
+[official_test]
+other = "Teste"
+
+[have_you_been_tested]
+other = "Foi testado para o COVID-19?"
+
+[when_tested]
+other = "Quando soube o resultado do teste?"
+
+[tested_positive]
+other = "O resultado do teste foi positivo?"
 
 [insert_token]
-other = "Insira aqui o seu token:"
+other = "Insira aqui o seu código oficial caso lhe tenha sido fornecido um"
 
-[when_tested_positive]
-other = "Quando foi diagnosticado com COVID-19?"
+[your_health]
+other = "Saúde"
+
+[experienced_symptoms]
+other = "Tem sentido sintomas de COVID-19?"
 
 [when_first_symptoms]
 other = "Quando sentiu os primeiros sintomas?"
@@ -23,11 +39,17 @@ other = "Quando sentiu os primeiros sintomas?"
 [i_had_no_symptoms]
 other = "Não tive nenhum sintoma até á data"
 
+[in_contact_with_positive_covid]
+other = "Teve em contacto com alguém confirmado COVID-19 positivo nos ultimos 15 dias?"
+
+[see_step_guide]
+other = "veja o nosso guia de como fazer o download do seu ficheiro de localização do Google"
+
 [select_location_file]
 other = "Selecione o seu ficheiro do Google Takeout com o nome"
 
-[upload_data]
-other = "Enviar Informação"
+[send_form]
+other = "Passo Final: Clique aqui para enviar a sua informação filtrada para o nosso serviço"
 
 [upload_data_sucess]
 other = """
@@ -58,9 +80,6 @@ other = "localizações filtradas"
 [locations_between]
 other = "localizações entre"
 
-[and]
-other = "e"
-
 [found]
 other = "encontrados"
 
@@ -88,6 +107,11 @@ other = "Inseriou uma data de sintomas no futuro?"
 [upload_your_between]
 other = "Vamos somente enviar a sua informação de localização pertencente às datas entre"
 
+
+#####################################
+# General
+#####################################
+
 [newsletter_msg]
 other = "Acompanhe o nosso projecto. Enviamos email se tivermos novidades"
 
@@ -95,4 +119,13 @@ other = "Acompanhe o nosso projecto. Enviamos email se tivermos novidades"
 other = "Endereço de Email"
 
 [language]
-other = "Lingua"
+other = "Language"
+
+[and]
+other = "e"
+
+[yes]
+other = "sim"
+
+[no]
+other = "não"
