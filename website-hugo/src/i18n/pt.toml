@@ -51,6 +51,12 @@ other = "Selecione o seu ficheiro do Google Takeout com o nome"
 [send_form]
 other = "Passo Final: Clique aqui para enviar a sua informação filtrada para o nosso serviço"
 
+[save_token]
+other = "Por favor guarde este código"
+
+[save_token_explanation]
+other = "Poderá usar este código mais tarde para verificar ou apagar a sua informação."
+
 [upload_data_sucess]
 other = """
 A sua localização foi enviada com sucesso. Obrigado pela sua contribuição para combater este virus.
@@ -84,7 +90,7 @@ other = "localizações entre"
 other = "encontrados"
 
 [nothing_to_upload]
-other = "... pedimos descula, mas não encontramos nenhuma informação para enviar."
+other = "Pedimos descula, mas não encontramos nenhuma informação para enviar."
 
 [upload]
 other = "enviar"

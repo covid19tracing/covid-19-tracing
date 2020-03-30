@@ -51,6 +51,12 @@ other = "Select your Google Takeout file"
 [send_form]
 other = "Final step: Press here to share your filtered data with covid19tracing.org now."
 
+[save_token]
+other = "Please save this code"
+
+[save_token_explanation]
+other = "You can use this code later on if you want to check our delete your data"
+
 [upload_data_sucess]
 other = "Your location data was uploaded successfully. Thanks a lot for your contribution to fight the virus. Your anonymized data will be integrated in the map soon."
 
@@ -79,7 +85,7 @@ other = "locations between"
 other = "found"
 
 [nothing_to_upload]
-other = "... sorry, nothing to upload."
+other = "Sorry, nothing to upload."
 
 [upload]
 other = "upload"
