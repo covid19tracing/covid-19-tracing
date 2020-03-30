@@ -14,7 +14,7 @@ const generateFileToken = function() {
 
 const storeData = function(data,dataWritten) {
   
-  const fileToken = generateFileToken();
+  const fileToken = data.Token ? data.Token : generateFileToken();
   const filename = fileToken + "_" + new Date().toISOString() + ".json";
 
   const blob = bucket.file(filename.toLowerCase().replace(/[^a-z0-9\._-]/g, '_'));
