@@ -8,9 +8,11 @@ http://www.covid19tracing.org/* https://covid19tracing.org/:splat 301!
 # Optional: Redirect default Netlify subdomain to primary domain
 https://covid-19-tracing.netlify.com/* https://covid19tracing.org/:splat 301!
 
-# Redirect browsers in Portugal to the Portuguese version of the website
-/  /pt   302  Country=pt,br
 
-# German Redirect
-/  /de   302!  Language=de
+# Language based redirects are broken in Netlify due to some forum posts, they are working on it
+# if it works again, I will propose to change everything to language based
+/  /de   302  Language=de
+
+# COUNTRY based Redirect
+/  /pt   302  Country=pt,br
 /  /de   302  Country=de,at
