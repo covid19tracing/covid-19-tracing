@@ -12,5 +12,5 @@ https://covid-19-tracing.netlify.com/* https://covid19tracing.org/:splat 301!
 /  /pt   302  Country=pt,br
 
 # German Redirect
-/  /de   302  Language=de
+/  /de   302!  Language=de
 /  /de   302  Country=de,at
