@@ -48,9 +48,18 @@ other = "Selecione o seu ficheiro do Google Takeout com o nome"
 [send_form]
 other = "Passo Final: Clique aqui para enviar a sua informação filtrada para o nosso serviço"
 
+[save_token]
+other = "Por favor guarde este código"
+
+[save_token_explanation]
+other = "Poderá usar este código mais tarde para verificar ou apagar a sua informação."
+
+[upload_sucess]
+other = "A sua localização foi enviada com sucesso"
+
 [upload_data_sucess]
 other = """
-A sua localização foi enviada com sucesso. Obrigado pela sua contribuição para combater este virus.
+Obrigado pela sua contribuição para combater este virus.
 A sua informação será anonimizada e inserida no mapa brevemente.
 """
 
@@ -75,7 +84,7 @@ other = "PROCESSANDO..."
 other = "{0} localizações filtradas, {1} localizações entre {2} e {3} encontrados"
 
 [nothing_to_upload]
-other = "... pedimos descula, mas não encontramos nenhuma informação para enviar."
+other = "Pedimos descula, mas não encontramos nenhuma informação para enviar."
 
 [upload_and_share]
 other = "enviar {0} informação de localização para Covid19tracing.org ..."

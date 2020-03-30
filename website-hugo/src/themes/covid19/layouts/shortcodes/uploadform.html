@@ -10,7 +10,7 @@
             <input type="radio" id="testedno" name="tested" value="no">
             <label for="testedno">{{ i18n "no" }}</label>
         </div>
-    </div>    
+    </div>
 
     <div class="question">
         <label for="testedDate">{{ i18n "when_tested" }}</label>
@@ -27,14 +27,14 @@
             <input type="radio" id="positiveno" name="positive" value="no">
             <label for="positiveno">{{ i18n "no" }}</label>
         </div>
-    </div>  
-    
+    </div>
+
     <div class="question">
         <label for="token">{{ i18n "insert_token" }}</label>
         <div class="options">
             <input type="text" id="token" name="token" value="">
         </div>
-    </div>             
+    </div>
 </div>
 
 <div class="questionblock">
@@ -47,14 +47,14 @@
             <input type="radio" id="symptomsno" name="symptoms" value="no">
             <label for="symptomsno">{{ i18n "no" }}</label>
         </div>
-    </div>     
-    
+    </div>
+
     <div class="question">
         <label for="symptomsDate">{{ i18n "when_first_symptoms" }}</label>
         <div class="options">
             <input type="date" id="symptomsDate" name="symptomsDate" value="">
         </div>
-    </div>        
+    </div>
 
     <div class="question">
         <label for="contactoptions">{{ i18n "in_contact_with_positive_covid" }}</label>
@@ -73,18 +73,35 @@
     </label>
     <div class="question">
         <label for="file">{{ i18n "select_location_file" }} <b>Location History.json</b></label>
-        <div class="options">                    
+        <div class="options">
             <input class="form-control" type="file" id="file" name="file">
         </div>
         <p id="datafilterinformation"></p>
     </div>
-    
+
 </div>
 
-<div>
-    <div id="uploadinformation" class="informationbox hidden"></div>
-    <button type="button" class="form-control" id="upload-btn" name="upload">{{ i18n "send_form" }}</button>
-</div>
+        <div class="questionblock hidden" id="response">
+            <label>
+                <div id="uploadstatus" class="informationbox"></div>
+            </label>
+
+            <div class="question">
+                <div id="uploadinformation" class="informationbox"></div>
+            </div>
+
+            <div class="question hidden" id="code">
+                <div class="informationbox">
+                    {{ i18n "save_token" }}: <b id="codevalue"></b>
+                    <p>{{ i18n "save_token_explanation" }}</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            <button type="button" class="form-control" id="upload-btn" name="upload">{{ i18n "send_form" }}</button>
+        </div>
 
 
 </form>
