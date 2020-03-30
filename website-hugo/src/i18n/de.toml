@@ -48,6 +48,15 @@ other = "Wähle die Google Takeout Datei aus"
 [send_form]
 other = "Finaler Schritt: Klicke hier um deine Daten hochzuladen und mit covid19tracing.org zu teilen."
 
+[save_token]
+other = "Bitte speichern Sie diesen Code"
+
+[save_token_explanation]
+other = "Sie können diesen Code später verwenden, wenn Sie Ihre Daten überprüfen oder löschen möchten"
+
+[upload_sucess]
+other = "Ihre Standortdaten wurden erfolgreich hochgeladen"
+
 [upload_data_sucess]
 other = "Deine Standortdaten wurde erfolgreich hochgeladen. Vielen Dank für deine Mithilfe zum Kampf gegen das Virus. Deine Daten werden bald in die Karte einfließen."
 
