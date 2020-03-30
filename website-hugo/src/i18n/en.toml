@@ -36,9 +36,6 @@ other = "Have you experienced any COVID-19 symptoms?"
 [when_first_symptoms]
 other = "When have you experienced your first symptoms?"
 
-[i_had_no_symptoms]
-other = "I haven't experienced any symptoms"
-
 [in_contact_with_positive_covid]
 other = "Have you been in contact with someone that is COVID-19 positive in the last 15 days?"
 

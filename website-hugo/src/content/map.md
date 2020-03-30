@@ -20,16 +20,16 @@ Independently if you were in the marked areas or not, you should always be aware
 
 ### <span style="color:#fb7021">⬤</span> Very High infectious area
 
-COVID-19 positive patients frequented this area very often in the past 15 days.
+COVID-19 positive people frequented this area very often in the past 15 days.
 
 ### <span style="color:#f0ea4b">⬤</span> High infectious area
 
-COVID-19 positive patients frequented this area often in the past 15 days.
+COVID-19 positive people frequented this area often in the past 15 days.
 
 ### <span style="color:#87f9e2">⬤</span> Medium infectious area
 
-COVID-19 positive patients frequented this area in the past 15 days. 
+COVID-19 positive people frequented this area in the past 15 days. 
 
 ### <span style="color:#6693d9">⬤</span> Potential infectious area
 
-COVID-19 positive patients were temporarily in this area in the past 15 days.
+COVID-19 positive people were temporarily in this area in the past 15 days.

@@ -36,9 +36,6 @@ other = "Tem sentido sintomas de COVID-19?"
 [when_first_symptoms]
 other = "Quando sentiu os primeiros sintomas?"
 
-[i_had_no_symptoms]
-other = "Não tive nenhum sintoma até á data"
-
 [in_contact_with_positive_covid]
 other = "Teve em contacto com alguém confirmado COVID-19 positivo nos ultimos 15 dias?"
 
