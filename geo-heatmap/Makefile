@@ -14,8 +14,12 @@ datasync: ## download all new json data files
 
 .PHONY: map 
 map: ## create the map based on all json files
-	python geo_heatmap.py --blur 2 --max-zoom 5 $(LOCALDATAFILESDIR)/*
+	python3 0_FindHomeBase.py
 
 .PHONY: deploy 
 deploy: ## copy heatmap to hugo live server
 	cp heatmap.html $(MAPHUGO)
+
+.PHONY: jupiter2python 
+jupiter2python: ## convert jupiter file to python file
+	jupyter nbconvert --to script *.ipynb

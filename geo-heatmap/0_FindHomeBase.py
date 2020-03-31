@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[182]:
+# In[4]:
 
 
 import pandas as pd
@@ -9,23 +9,27 @@ import json
 import folium
 import geopandas
 from folium.plugins import HeatMap
+import os
 
 
-# In[183]:
+# In[5]:
 
 
-coordinate_accuracy = 7;
-coordinate_cluster_accuracy = 3;
-coordinate_output_accuracy = 5;
+coordinate_accuracy = 7
+coordinate_cluster_accuracy = 3
+coordinate_output_accuracy = 5
+datadir = os.path.abspath("./datafiles/")
 files = {
     'jakob': 'wolfi4_2020-03-24t15_55_10.999z.json',
     'wolfi': 'wolfi4_2020-03-25t19_29_26.969z.json',
     'steffi': 'wolfi4_2020-03-24t16_32_43.640z.json',
     'tiago': 'tiago9_2020-03-25t20_36_05.925z.json'
 }
+files = [os.path.join(datadir,x) for x in os.listdir(datadir) if x.endswith(".json")]
+files
 
 
-# In[184]:
+# In[6]:
 
 
 def prepareLocations(data):
@@ -43,10 +47,9 @@ def prepareLocations(data):
     locations['duration'] = locations['timestampMs'].astype(int).diff(periods=1)
     
     return locations
-locations = prepareLocations(data)
 
 
-# In[185]:
+# In[7]:
 
 
 def getTopNightLocations(locations):
@@ -58,13 +61,7 @@ def getTopNightLocations(locations):
     return topLocations
 
 
-# In[186]:
-
-
-topNightLocations = getTopNightLocations(locations)
-
-
-# In[187]:
+# In[8]:
 
 
 #startpoint = groupedNightLocations.index[0]
@@ -77,7 +74,7 @@ topNightLocations = getTopNightLocations(locations)
 #    fill_color='#0080bb').add_to(map) for index, row in topNightLocations.iterrows()]
 
 
-# In[188]:
+# In[9]:
 
 
 def getFilteredUniqueLocations(locations,locationsToRemove):
@@ -86,12 +83,12 @@ def getFilteredUniqueLocations(locations,locationsToRemove):
     return groupedFilteredLocations
 
 
-# In[189]:
+# In[10]:
 
 
 finalLocations = []
-for index,filename in files.items():
-    with open("/home/woolf/projects/covid-19-tracing/geo-heatmap/datafiles/{}".format(filename)) as f: 
+for filename in files:
+    with open(filename) as f: 
         data = json.load(f)
         locations = prepareLocations(data)
         topNightLocations = getTopNightLocations(locations)
@@ -106,11 +103,11 @@ mapClusters = pd.concat(finalLocations).groupby(['latitude_output', 'longitude_o
 
 
 
-# In[192]:
+# In[14]:
 
 
-startpoint = mapClusters.index[0]
-map = folium.Map(startpoint, zoom_start=12, 
+startpoint = (47,11)
+map = folium.Map(startpoint, zoom_start=4, 
 tiles='cartodbpositron')
 
 map_data = [(index[0],index[1],value) for index, value in mapClusters.iteritems()]
@@ -125,7 +122,7 @@ heatmap = HeatMap(map_data,
 map.add_child(heatmap)
 
 
-# In[193]:
+# In[12]:
 
 
 map.save("heatmap.html")
