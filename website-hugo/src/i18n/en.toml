@@ -49,10 +49,10 @@ other = "Select your Google Takeout file"
 other = "Final step: Press here to share your filtered data with covid19tracing.org now."
 
 [save_token]
-other = "Please save this code"
+other = "Please, write down this code"
 
 [save_token_explanation]
-other = "You can use this code later on if you want to check or delete your data"
+other = "You can use this code later to check or delete your uploaded data"
 
 [upload_sucess]
 other = "Your location data was uploaded successfully"
