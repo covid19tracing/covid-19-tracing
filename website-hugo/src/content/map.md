@@ -5,18 +5,18 @@ draft: false
 slug: map
 ---
 
-<center><h3>Map that describes the movement of the population in the last days</h3></center>
+# Hotspots Map of Movement in the past 5 days
 
-Contribue with your anonimized data and help us make this map an assencial tool to fight the COVID-19 virus
+<div class="contribution">
 
-<center>
-    <form action='/newcase'>
-        <input style="cursor: pointer;"  type="submit" value="I want to contribute" />
-    </form>
-</center>
+Contribute your anonymized data and help us make this map an essential tool to fight the COVID-19 virus.
 
+[I want to contribute with my data](/newcase)
 
-*A new map will be daily generated*
+</div>
+
+*A new map will be generated daily and shows the hotspots of movement*
+
 <iframe src="/map/heatmap.html" width="100%" height="700px"></iframe>
 
 
