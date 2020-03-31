@@ -11,7 +11,7 @@ slug: map
 
 Mitmachen und deine anonymisierten Daten beisteuern, um die Karte zu einem hilfreichen Werkzeug zur Bekämpfung des COVID-19 Virus zu machen.
 
-[Ich will meine Daten teilen](/newcase)
+[Ich will meine Daten teilen](/de/newcase)
 
 </div>
 
