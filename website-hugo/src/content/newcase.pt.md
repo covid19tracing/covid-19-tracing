@@ -8,4 +8,6 @@ layout: upload
 
 # Adicionar um novo caso
 
+**Mesmo que não tenha sido diagnosticado com COVID-19 a sua informação pode ajudar a conter esta ameaça**
+
 {{< uploadform >}}

@@ -2,7 +2,7 @@
 <!-- Default base template. Other templates define the "main" portion in this template -->
 <html lang="{{ .Site.LanguageCode }}">
     {{ partial "head.html" . }}
-    <body>
+    <body class="page-{{ with .File }}{{ .File.TranslationBaseName }}{{ end }}">
         {{ partial "nav.html" . }}
 
         {{ block "main" . }}
