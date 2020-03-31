@@ -4,9 +4,16 @@ var startDate = new Date();
 var endDate = new Date();
 var formState = {};
 
+function trackEvent(action,name,value) {
+    if (_paq && _paq.push) {
+        _paq.push(['trackEvent', 'upload', action, name, value]);
+    }
+}
+
 function sendData(data) {
 
     console.log("start upload" + data);
+    trackEvent('upload','start');
 
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://europe-west3-covid-19-tracing.cloudfunctions.net/uploadLocation', true);
@@ -30,13 +37,16 @@ function sendData(data) {
         let response = JSON.parse(xhr.responseText);
         showArea("code");
         showInformation("codevalue", response["filetoken"]);
+        trackEvent('upload','positive',data["positive"] ? 1 : 0);
       }
+      trackEvent('upload','finished',xhr.status);
     };
 
     xhr.onerror = function() {
         setElementVisibility('upload-btn', true)
         alert('{{ i18n "upload_data_fail_network" }}');
         showInformation('uploadinformation','{{ i18n "upload_failed" }}');
+        trackEvent('upload','error')
     };
     
     xhr.send(JSON.stringify(data));
@@ -76,6 +86,8 @@ function handleFileSelect(evt) {
         showInformation('datafilterinformation',info);
 
         locationData = null;
+
+        trackEvent('fileselected','locations',filteredLocations.length)
 
         if (filteredLocations.length == 0) {
             document.getElementById('datafilterinformation').innerHTML =
