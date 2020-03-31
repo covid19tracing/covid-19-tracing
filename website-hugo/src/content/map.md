@@ -9,7 +9,7 @@ slug: map
 
 <div class="contribution">
 
-Contribute your anonymized data and help us make this map an essential tool to fight the COVID-19 virus.
+Contribute with your anonymized data and help us make this map an essential tool to fight the COVID-19 virus.
 
 [I want to contribute with my data](/newcase)
 

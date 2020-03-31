@@ -5,18 +5,18 @@ draft: false
 slug: map
 ---
 
-<center><h3>Mapa do movimento da população nos últimos dias</h3></center>
+# Mapa do movimento da população nos últimos dias
+
+<div class="contribution">
 
 Contribua anonimamente com os seus dados e ajude-nos a fazer deste mapa uma ferramenta essencial no combate ao COVID-19
 
-<center>
-    <form action='/newcase'>
-        <input style="cursor: pointer;"  type="submit" value="Quero Contribuir" />
-    </form>
-</center>
+[Quero Contribuir](/pt/newcase)
 
+</div>
 
 *Um novo mapa será gerado diariamente*
+
 <iframe src="/map/heatmap.html" width="100%" height="700px"></iframe>
 
 
