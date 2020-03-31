@@ -15,7 +15,7 @@ Contribute your anonymized data and help us make this map an essential tool to f
 
 </div>
 
-*A new map will be generated daily and shows the hotspots of movement*
+*A new map will be generated daily and shows the hotspots of movement of all submitted data*
 
 <iframe src="/map/heatmap.html" width="100%" height="700px"></iframe>
 
