@@ -1,0 +1,4 @@
+- Tiago Ferreira ([LinkedIn](https://www.linkedin.com/in/tiago-ferreira-48562095/), [Twitter](https://twitter.com/TiagoRBF))
+- Wolfgang Gassler ([LinkedIn](https://www.linkedin.com/in/wolfganggassler/), [Twitter](https://twitter.com/schafele))
+- Jaume Prat
+- Mario Müller ([LinkedIn](https://www.linkedin.com/in/mariomueller/), [Twitter](https://twitter.com/xenji))

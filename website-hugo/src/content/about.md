@@ -35,6 +35,5 @@ Reach out to us, we would love to collaborate and improve our system. We can als
 
 ## The Team behind the project
 
-- Tiago Ferreira ([LinkedIn](https://www.linkedin.com/in/tiago-ferreira-48562095/), [Twitter](https://twitter.com/TiagoRBF))
-- Wolfgang Gassler ([LinkedIn](https://www.linkedin.com/in/wolfganggassler/), [Twitter](https://twitter.com/schafele))
+{{< mdinclude team.md.inc >}}
 - YOU? Drop us a message...

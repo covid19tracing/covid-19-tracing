@@ -32,6 +32,5 @@ Wir sind Informatiker und sind uns natürlich über die Problematik des Datensch
 
 ## Das Team hinter dem Projekt
 
-- Tiago Ferreira ([LinkedIn](https://www.linkedin.com/in/tiago-ferreira-48562095/), [Twitter](https://twitter.com/TiagoRBF))
-- Wolfgang Gassler ([LinkedIn](https://www.linkedin.com/in/wolfganggassler/), [Twitter](https://twitter.com/schafele))
+{{< mdinclude team.md.inc >}}
 - DU? Schreib uns eine Nachricht...

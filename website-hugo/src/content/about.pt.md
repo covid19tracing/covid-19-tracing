@@ -35,6 +35,5 @@ Entre em contato connosco, gostaríamos de colaborar e melhorar nosso sistema. T
 
 ## A equipe por trás do projeto
 
-- Tiago Ferreira ([LinkedIn](https://www.linkedin.com/in/tiago-ferreira-48562095/), [Twitter](https://twitter.com/TiagoRBF))
-- Wolfgang Gassler ([LinkedIn](https://www.linkedin.com/in/wolfganggassler/), [Twitter](https://twitter.com/schafele))
+{{< mdinclude team.md.inc >}}
 - Tu? Envia-nos uma mensagem ...
