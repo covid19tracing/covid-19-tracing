@@ -1,4 +1,4 @@
 - Tiago Ferreira ([LinkedIn](https://www.linkedin.com/in/tiago-ferreira-48562095/), [Twitter](https://twitter.com/TiagoRBF))
 - Wolfgang Gassler ([LinkedIn](https://www.linkedin.com/in/wolfganggassler/), [Twitter](https://twitter.com/schafele))
-- Jaume Prat
+- Jaume Prat ([LinkedIn](https://www.linkedin.com/in/jaumeprat/), [Twitter](https://twitter.com/SenyorDeveloper))
 - Mario Müller ([LinkedIn](https://www.linkedin.com/in/mariomueller/), [Twitter](https://twitter.com/xenji))
