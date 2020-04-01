@@ -14,7 +14,7 @@ datasync: ## download all new json data files
 
 .PHONY: map 
 map: ## create the map based on all json files
-	python3 0_FindHomeBase.py
+	python3 GenerateMap.py
 
 .PHONY: deploy 
 deploy: ## copy heatmap to hugo live server
