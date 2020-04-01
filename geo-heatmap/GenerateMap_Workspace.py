@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[10]:
+# In[66]:
 
 
 import pandas as pd
@@ -12,7 +12,7 @@ import os
 import locproc
 
 
-# In[11]:
+# In[67]:
 
 
 personfiles = {
@@ -24,7 +24,7 @@ personfiles = {
 }
 
 
-# In[12]:
+# In[68]:
 
 
 settings = {
@@ -33,62 +33,63 @@ settings = {
     'coordinate_output_accuracy': 5
 }
 datadir = os.path.abspath("./datafiles/")
-files = [os.path.join(datadir,x) for x in os.listdir(datadir) if x.endswith(".json")]
 
 
-# In[13]:
+# In[69]:
 
 
-positiveLocations = []
-healthyLocations = []
 
-for filename in files:
-    with open(filename) as f: 
-        data = json.load(f)
-        
-        locations = locproc.prepareLocations(data, settings)
-        topNightLocations = locproc.getTopNightLocations(locations)
-        uniqueLocations = locproc.getFilteredUniqueLocations(locations,topNightLocations).index.to_series()
-        
-        if 'positive' in data and data['positive'] == True:
-            positiveLocations.append(uniqueLocations)
-        else:
-            healthyLocations.append(uniqueLocations)
-            
+with open(os.path.join(datadir,personfiles['robert'])) as f: 
+    data = json.load(f)
 
-mapPositiveClusters = pd.concat(positiveLocations).groupby(['latitude_output', 'longitude_output'])    .count()    .sort_values(ascending=False)
-mapHealthyClusters = pd.concat(healthyLocations).groupby(['latitude_output', 'longitude_output'])    .count()    .sort_values(ascending=False)
+locations = locproc.prepareLocations(data, settings)
+topNightLocations = locproc.getTopNightLocations(locations)
+uniqueLocations = locproc.getFilteredUniqueLocations(locations,topNightLocations).index.to_series()
+
+locations2 = locproc.prepareLocations(data, settings)
+
+final2 = locations2    .groupby(['latitude', 'longitude'])    .agg({'duration': ['sum','count']})    .sort_values(by=('duration','count'),ascending=0)
+#mapPositiveClusters = pd.concat(positiveLocations).groupby(['latitude_output', 'longitude_output'])\
+#    .count()\
+#    .sort_values(ascending=False)
+#mapHealthyClusters = pd.concat(healthyLocations).groupby(['latitude_output', 'longitude_output'])\
+#    .count()\
+#    .sort_values(ascending=False)
 
 
-# In[14]:
+# In[70]:
+
+
+uniqueLocations
+
+
+# In[71]:
 
 
 startpoint = (47,11)
 map = folium.Map(startpoint, zoom_start=4, 
 tiles='cartodbpositron')
 
-map_data = [(index[0],index[1],value) for index, value in mapPositiveClusters.iteritems()]
-
-heatmap = HeatMap([(index[0],index[1],value) for index, value in mapPositiveClusters.iteritems()],
-                  name='Hotspots', 
-                  max_val=len(files),
+heatmap = HeatMap([(index[0],index[1],1) for index, value in uniqueLocations.iteritems()],
+                  name='Ungenau', 
+                  max_val=10,
                   blur=2,
                   radius=5,
                   min_opacity=0.2,
-                   max_zoom=5)
-heatmap2 = HeatMap([(index[0],index[1],value) for index, value in mapHealthyClusters.iteritems()],
-                  name='General Movement', 
-                  max_val=len(files),
+                   max_zoom=18)
+heatmap2 = HeatMap([(index[0],index[1],value[('duration','sum')]) for index, value in final2.iterrows()],
+                  name='Genau', 
+                  max_val=max(final2[('duration','sum')]),
                   blur=2,
                   radius=5,
                   min_opacity=0.2,
-                  max_zoom=5)
+                  max_zoom=18)
 map.add_child(heatmap)
 map.add_child(heatmap2)
 folium.LayerControl().add_to(map)
 
 
-# In[15]:
+# In[72]:
 
 
 map.save("heatmap.html")

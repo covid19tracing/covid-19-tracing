@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[10]:
+# In[8]:
 
 
 import pandas as pd
@@ -12,7 +12,7 @@ import os
 import locproc
 
 
-# In[12]:
+# In[9]:
 
 
 settings = {
@@ -24,11 +24,11 @@ datadir = os.path.abspath("./datafiles/")
 files = [os.path.join(datadir,x) for x in os.listdir(datadir) if x.endswith(".json")]
 
 
-# In[13]:
+# In[10]:
 
 
 positiveLocations = []
-healthyLocations = []
+movementLocations = []
 
 for filename in files:
     with open(filename) as f: 
@@ -40,43 +40,40 @@ for filename in files:
         
         if 'positive' in data and data['positive'] == True:
             positiveLocations.append(uniqueLocations)
-        else:
-            healthyLocations.append(uniqueLocations)
+        
+        movementLocations.append(uniqueLocations)
             
 
 mapPositiveClusters = pd.concat(positiveLocations).groupby(['latitude_output', 'longitude_output'])    .count()    .sort_values(ascending=False)
-mapHealthyClusters = pd.concat(healthyLocations).groupby(['latitude_output', 'longitude_output'])    .count()    .sort_values(ascending=False)
+mapMovementClusters = pd.concat(movementLocations).groupby(['latitude_output', 'longitude_output'])    .count()    .sort_values(ascending=False)
 
 
-# In[14]:
+# In[22]:
 
 
 startpoint = (47,11)
-map = folium.Map(startpoint, zoom_start=4, 
-tiles='cartodbpositron')
+map = folium.Map(startpoint, zoom_start=4, tiles='OpenStreetMap', control_scale = True)
 
-map_data = [(index[0],index[1],value) for index, value in mapPositiveClusters.iteritems()]
-
-heatmap = HeatMap([(index[0],index[1],value) for index, value in mapPositiveClusters.iteritems()],
+positiveHeat = HeatMap([(index[0],index[1],value) for index, value in mapPositiveClusters.iteritems()],
                   name='COVID-19 Hotspots', 
                   max_val=len(files),
                   blur=2,
                   radius=5,
                   min_opacity=0.2,
-                   max_zoom=5)
-heatmap2 = HeatMap([(index[0],index[1],value) for index, value in mapHealthyClusters.iteritems()],
+                   max_zoom=18)
+movementHeat = HeatMap([(index[0],index[1],value) for index, value in mapMovementClusters.iteritems()],
                   name='General Movement', 
                   max_val=len(files),
                   blur=2,
                   radius=5,
                   min_opacity=0.2,
-                  max_zoom=5)
-map.add_child(heatmap)
-map.add_child(heatmap2)
-folium.LayerControl().add_to(map)
+                  max_zoom=18)
+map.add_child(positiveHeat)
+map.add_child(movementHeat)
+folium.LayerControl(position='topright', collapsed=False).add_to(map)
 
 
-# In[15]:
+# In[23]:
 
 
 map.save("heatmap.html")
