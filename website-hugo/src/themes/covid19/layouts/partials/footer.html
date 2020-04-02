@@ -1,4 +1,13 @@
+{{ $weekend_logo := resources.Get "images/weekendcom_logo.png"  }}
 <footer class="footer">
+    <div class="content-container">
+        <div class="content">
+            <p>{{ i18n "supported_by" }}</p>
+            <a href="https://weekend.com" target="_blank">
+                <img width="200px" src='{{ $weekend_logo.Permalink }}' alt="">
+            </a>
+        </div>
+    </div>
     <div class="content-container">
         <div class="content">
             <hr>
@@ -9,9 +18,9 @@
                     {{ .Site.Language.LanguageName }}
                 </option>
                 {{ range .Translations }}
-                    <option data-href="{{ .Permalink }}" value="{{ .Site.Language.Params.languageCode }}">
-                        {{ .Site.Language.Params.languageName }}
-                    </option>
+                <option data-href="{{ .Permalink }}" value="{{ .Site.Language.Params.languageCode }}">
+                    {{ .Site.Language.Params.languageName }}
+                </option>
                 {{ end }}
             </select>
         </div>
@@ -20,10 +29,10 @@
         function setLanguageCookie() {
             document.cookie = "nf_country=disabled; expires=Thu, 18 Dec 2021 12:00:00 UTC; path=/";
         }
-        function changeLanguage(obj){
+        function changeLanguage(obj) {
             let href = obj.options[obj.selectedIndex].getAttribute('data-href');
             setLanguageCookie()
-            window.location= href;
+            window.location = href;
         }
     </script>
 </footer>

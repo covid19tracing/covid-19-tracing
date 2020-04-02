@@ -100,6 +100,13 @@ other = "Uuups, Symptome in der Zukunft? Bitte überprüfe das Datum."
 other = "Wir filtern deine Daten auf Standorte zwischen {0} und {1}"
 
 #####################################
+# Footer
+#####################################
+
+[supported_by]
+other = "Unterstützt durch"
+
+#####################################
 # General
 #####################################
 

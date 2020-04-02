@@ -104,6 +104,12 @@ other = "Inseriou uma data de sintomas no futuro?"
 [upload_your_between]
 other = "Vamos somente enviar a sua informação de localização pertencente às datas entre {0} e {1}"
 
+#####################################
+# Footer
+#####################################
+
+[supported_by]
+other = "Apoiantes"
 
 #####################################
 # General
