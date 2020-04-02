@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[66]:
+# In[80]:
 
 
 import pandas as pd
@@ -12,7 +12,7 @@ import os
 import locproc
 
 
-# In[67]:
+# In[81]:
 
 
 personfiles = {
@@ -24,73 +24,76 @@ personfiles = {
 }
 
 
-# In[68]:
+# In[82]:
 
 
 settings = {
     'coordinate_accuracy': 7,
     'coordinate_cluster_accuracy': 3,
-    'coordinate_output_accuracy': 5
+    'coordinate_output_accuracy': 5,
+    'analyzeWindowDays': 30
 }
 datadir = os.path.abspath("./datafiles/")
+files = [os.path.join(datadir,x) for x in os.listdir(datadir) if x.endswith(".json")]
 
 
-# In[69]:
+# In[97]:
 
 
-
-with open(os.path.join(datadir,personfiles['robert'])) as f: 
-    data = json.load(f)
-
-locations = locproc.prepareLocations(data, settings)
-topNightLocations = locproc.getTopNightLocations(locations)
-uniqueLocations = locproc.getFilteredUniqueLocations(locations,topNightLocations).index.to_series()
-
-locations2 = locproc.prepareLocations(data, settings)
-
-final2 = locations2    .groupby(['latitude', 'longitude'])    .agg({'duration': ['sum','count']})    .sort_values(by=('duration','count'),ascending=0)
-#mapPositiveClusters = pd.concat(positiveLocations).groupby(['latitude_output', 'longitude_output'])\
-#    .count()\
-#    .sort_values(ascending=False)
-#mapHealthyClusters = pd.concat(healthyLocations).groupby(['latitude_output', 'longitude_output'])\
-#    .count()\
-#    .sort_values(ascending=False)
+pd.Timestamp.today().strftime("%Y-%m-%d")
 
 
-# In[70]:
+# In[83]:
 
 
-uniqueLocations
+positiveLocations = []
+movementLocations = []
+
+for filename in files:
+    with open(filename) as f: 
+        data = json.load(f)
+        
+    locations = locproc.prepareLocations(data, settings)
+    locations = locations[                    locations.index.to_series().between(                            pd.Timestamp.today()-pd.to_timedelta(settings['analyzeWindowDays'], unit='d'),                            pd.Timestamp.today()                )]
+
+    topNightLocations = locproc.getTopNightLocations(locations)
+    uniqueLocations = locproc.getFilteredUniqueLocations(locations,topNightLocations).index.to_series()
+
+    movementLocations.append(uniqueLocations)
+    if 'positive' in data and data['positive'] == True:
+        positiveLocations.append(uniqueLocations)
+            
+mapPositiveClusters = pd.concat(positiveLocations).groupby(['latitude_output', 'longitude_output'])    .count()    .sort_values(ascending=False)
+mapMovementClusters = pd.concat(movementLocations).groupby(['latitude_output', 'longitude_output'])    .count()    .sort_values(ascending=False)
 
 
-# In[71]:
+# In[101]:
 
 
 startpoint = (47,11)
-map = folium.Map(startpoint, zoom_start=4, 
-tiles='cartodbpositron')
+map = folium.Map(startpoint, zoom_start=4, tiles='OpenStreetMap', control_scale = True)
 
-heatmap = HeatMap([(index[0],index[1],1) for index, value in uniqueLocations.iteritems()],
-                  name='Ungenau', 
-                  max_val=10,
+positiveHeat = HeatMap([(index[0],index[1],value) for index, value in mapPositiveClusters.iteritems()],
+                  name='COVID-19 Hotspots'+pd.Timestamp.today().strftime(" (%Y-%m-%d)"), 
+                  max_val=len([len(x) for x in positiveLocations if len(x) > 0]),
                   blur=2,
                   radius=5,
                   min_opacity=0.2,
                    max_zoom=18)
-heatmap2 = HeatMap([(index[0],index[1],value[('duration','sum')]) for index, value in final2.iterrows()],
-                  name='Genau', 
-                  max_val=max(final2[('duration','sum')]),
+movementHeat = HeatMap([(index[0],index[1],value) for index, value in mapMovementClusters.iteritems()],
+                  name='General Movement'+pd.Timestamp.today().strftime(" (%Y-%m-%d)"), 
+                  max_val=len([len(x) for x in movementLocations if len(x) > 0]),
                   blur=2,
                   radius=5,
                   min_opacity=0.2,
                   max_zoom=18)
-map.add_child(heatmap)
-map.add_child(heatmap2)
-folium.LayerControl().add_to(map)
+map.add_child(positiveHeat)
+map.add_child(movementHeat)
+folium.LayerControl(position='topright', collapsed=False).add_to(map)
 
 
-# In[72]:
+# In[102]:
 
 
-map.save("heatmap.html")
+map
 
