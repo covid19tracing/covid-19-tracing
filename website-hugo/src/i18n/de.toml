@@ -120,7 +120,7 @@ other = "Contribute with your anonymized data and get one"
 other = "Checking..."
 
 [no_match]
-other = "Based on the current data, we couldn't identify that you have visited any infectous areas. Since we are gathering more data this result might change..."
+other = "Based on the current data, we could not identify that you have visited any infectous areas. Since we are gathering more data this result might change..."
 
 
 #####################################
