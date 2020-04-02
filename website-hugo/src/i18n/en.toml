@@ -103,7 +103,7 @@ other = "We will filter the data on your computer and ONLY upload data between {
 # Footer
 #####################################
 [supported_by]
-other = "Supported by"
+other = "Supported and recommended by"
 
 #####################################
 # General
