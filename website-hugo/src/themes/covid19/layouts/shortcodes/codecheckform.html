@@ -1,4 +1,4 @@
-<form id="codecheckform" class="checkcode">
+<div id="codecheckform" class="checkcode">
 
 <div class="questionblock">
     <label>Have I been in a potential infected area?</label>
@@ -8,10 +8,28 @@
         <div class="options">
             <p>
                 <input type="text" id="token" name="token" value="">
-                <button>check</button>
+                <button onclick="checkCode()">check</button>
             </p>
+        </div>
+        <div class="options" id="checking">
         </div>
     </div>
 </div>
 
-</form>
+<script>
+    function checkCode(){
+        let token = document.getElementById('token').value;
+        console.log(token);
+        if (token.length && token.replace(/[^a-zA-Z0-9]/g, '').length != 6) {
+            document.getElementById('checking').innerHTML = "Your token is not valid"
+            return;
+        }
+        document.getElementById('checking').innerHTML = "Checking..."
+        setTimeout(function() {
+            document.getElementById('checking').innerHTML = "Nope, you are fine"
+        }, 1000);
+    }
+
+</script>
+
+</div>
