@@ -285,11 +285,12 @@ footer {
   width: inherit !important;
 }
 
-.contribution {
+.checkcode {
+
   margin: auto;
   text-align: center;
-  max-width: 500px;
-  padding: 1em;
+  max-width: 600px;
+  padding: 0.5em;
   a {
     display: inline-block;
     border-radius: 10px;
@@ -297,11 +298,6 @@ footer {
     color: $gray-dark;
     font-weight: bold;
   }
-}
-
-.checkcode {
-
-  margin-bottom: 2em;
 
   .questionblock {
     margin-bottom: 1em;
@@ -319,7 +315,6 @@ footer {
     }
 
     .question {
-      padding: 0.5em;
 
       &> label {
         line-height: 150%;

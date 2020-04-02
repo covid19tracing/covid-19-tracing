@@ -1,30 +1,29 @@
 <div id="codecheckform" class="checkcode">
 
-<div class="questionblock">
-    <label>{{ i18n "have_i_been_infection_area" }}</label>
+    <div class="questionblock">
+        <label>{{ i18n "have_i_been_infection_area" }}</label>
 
-    <div class="question">
-        <label for="token">{{ i18n "insert_your_code" }}</label>
-        <div class="options">
-            <p>
-                <input type="text" id="token" name="token" value="">
-                <button onclick="checkCode()">check</button>
-            </p>
+        <div class="question">
+            <label for="token">{{ i18n "insert_your_code" }}</label>
+            <div class="options">
+                <p>
+                    <input type="text" id="token" name="token" value="">
+                    <button onclick="checkCode()">check</button>
+                </p>
+            </div>
+            <div class="options" id="checking"></div>
         </div>
-        <div class="options" id="checking">
+
+        <div class="question">
+            {{ i18n "not_have_code" }}
+            <div>
+                <a href="{{ .Site.LanguagePrefix }}/newcase">
+                    {{ i18n "contribute" }}
+                </a>
+            </div>
         </div>
-    </div>
 
-    <div class="question">
-        {{ i18n "not_have_code" }}
-        <p>
-            <a href="{{ .Site.LanguagePrefix }}/newcase">
-                {{ i18n "contribute" }}
-            </a>
-        </p>
     </div>
-
-</div>
 
 {{ $js := resources.Get "js/checkcode.js" | resources.ExecuteAsTemplate  (printf "%s/js/checkcode.js" $.Site.Language ) . | resources.Minify | fingerprint }}
 <script src="{{ $js.Permalink }}"></script>
