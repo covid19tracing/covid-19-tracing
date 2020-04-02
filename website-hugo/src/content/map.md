@@ -9,6 +9,10 @@ slug: map
 
 <div class="contribution">
 
+{{< codecheckform >}}
+
+Don't have a code yet?
+
 Contribute with your anonymized data and help us make this map an essential tool to fight the COVID-19 virus.
 
 [I want to contribute with my data](/newcase)

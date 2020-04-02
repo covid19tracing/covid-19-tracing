@@ -306,3 +306,63 @@ footer {
     }
   }
 }
+
+.checkcode {
+
+  margin-bottom: 2em;
+  
+  .questionblock {
+    margin-bottom: 1em;
+    border: 1px $gray-lightest solid;
+    padding: 1em;
+
+    &> label {
+      display: block;
+      font-size: 130%;
+      padding: 0.5em;
+
+      span.small {
+        font-size: 80%;
+      }
+    }
+
+    .question {
+      padding: 0.5em;
+
+      &> label {
+        line-height: 150%;
+      }
+
+      .options {
+        display: inline;
+        @media (max-width: $breakpoint-tablet) {
+          display: block;
+          margin-top: 1em;
+        }
+
+        input {
+          margin-left: 1em;
+          padding: 0.5em;
+        }
+      }
+    }
+
+  }
+
+  button {
+    display: inline-block;
+    border: 1px solid $orange;
+    background-color: $orange;
+    border-radius: 10px;
+    padding: 0.5em;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+      color: $orange;
+      background-color: $gray-medium;
+    }
+  }
+}
+
