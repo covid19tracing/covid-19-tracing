@@ -100,6 +100,12 @@ other = "Sorry, symptoms in the future? Check your symptoms date, please."
 other = "We will filter the data on your computer and ONLY upload data between {0} and {1}"
 
 #####################################
+# Footer
+#####################################
+[supported_by]
+other = "Supported and recommended by"
+
+#####################################
 # General
 #####################################
 
