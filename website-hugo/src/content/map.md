@@ -5,19 +5,12 @@ draft: false
 slug: map
 ---
 
-# Hotspots Map of Movement in the past 5 days
-
 <div class="contribution">
-
 {{< codecheckform >}}
 
-Don't have a code yet?
-
-Contribute with your anonymized data and help us make this map an essential tool to fight the COVID-19 virus.
-
-[I want to contribute with my data](/newcase)
-
 </div>
+
+# Hotspots Map of Movement in the past 5 days
 
 *A new map will be generated daily and shows the hotspots of movement of all submitted data*
 

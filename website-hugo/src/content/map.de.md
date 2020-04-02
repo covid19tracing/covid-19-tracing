@@ -5,15 +5,12 @@ draft: false
 slug: map
 ---
 
-# Hotspots Karte von Bewegungen in den letzten 5 Tagen
-
 <div class="contribution">
-
-Mitmachen und deine anonymisierten Daten beisteuern, um die Karte zu einem hilfreichen Werkzeug zur Bekämpfung des COVID-19 Virus zu machen.
-
-[Ich will meine Daten teilen](/de/newcase)
+{{< codecheckform >}}
 
 </div>
+
+# Hotspots Karte von Bewegungen in den letzten 5 Tagen
 
 *Unsere Karte wird jeden Tag neu generiert und zeigt die Hotspots von Bewegungen aller übermittelten Daten*
 

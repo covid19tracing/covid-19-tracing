@@ -100,6 +100,30 @@ other = "Uuups, Symptome in der Zukunft? Bitte überprüfe das Datum."
 other = "Wir filtern deine Daten auf Standorte zwischen {0} und {1}"
 
 #####################################
+# CheckCode
+#####################################
+
+
+[have_i_been_infection_area]
+other = "Have I been in a potential infected area?"
+
+[insert_your_code]
+other = "Insert your code here and find out"
+
+[not_have_code]
+other = "Don't have a code yet?"
+
+[contribute]
+other = "Contribute with your anonymized data and get one"
+
+[checking]
+other = "Checking..."
+
+[no_match]
+other = "Based on the current data, we couldn't identify that you have visited any infectous areas. Since we are gathering more data this result might change..."
+
+
+#####################################
 # Footer
 #####################################
 

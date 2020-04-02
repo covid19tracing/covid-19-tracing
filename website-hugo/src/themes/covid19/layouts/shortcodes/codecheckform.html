@@ -1,10 +1,10 @@
 <div id="codecheckform" class="checkcode">
 
 <div class="questionblock">
-    <label>Have I been in a potential infected area?</label>
+    <label>{{ i18n "have_i_been_infection_area" }}</label>
 
     <div class="question">
-        <label for="token">Insert your code here and find out</label>
+        <label for="token">{{ i18n "insert_your_code" }}</label>
         <div class="options">
             <p>
                 <input type="text" id="token" name="token" value="">
@@ -14,19 +14,36 @@
         <div class="options" id="checking">
         </div>
     </div>
+
+    <div class="question">
+        {{ i18n "not_have_code" }}
+        <p>
+            <a href="{{ .Site.LanguagePrefix }}/newcase">
+                {{ i18n "contribute" }}
+            </a>
+        </p>
+    </div>
+
 </div>
 
 <script>
+    function trackEvent(action,name,value) {
+        if (_paq && _paq.push) {
+            _paq.push(['trackEvent', 'checkcode', action, name, value]);
+        }
+    }
+
     function checkCode(){
         let token = document.getElementById('token').value;
-        console.log(token);
-        if (token.length && token.replace(/[^a-zA-Z0-9]/g, '').length != 6) {
-            document.getElementById('checking').innerHTML = "Your token is not valid"
+        if (token.length == 0) {
+            document.getElementById('checking').innerHTML = '{{ i18n "fail_code_not_valid" }}'
+            trackEvent('click','valid', false);
             return;
         }
-        document.getElementById('checking').innerHTML = "Checking..."
+        trackEvent('click','valid', true);
+        document.getElementById('checking').innerHTML = '{{ i18n "checking" }}'
         setTimeout(function() {
-            document.getElementById('checking').innerHTML = "Nope, you are fine"
+            document.getElementById('checking').innerHTML = '{{ i18n "no_match" }}'
         }, 1000);
     }
 

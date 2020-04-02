@@ -289,21 +289,13 @@ footer {
   margin: auto;
   text-align: center;
   max-width: 500px;
-  border: 1px solid $gray-dark;
   padding: 1em;
   a {
     display: inline-block;
-    border: 1px solid $orange;
-    background-color: $orange;
     border-radius: 10px;
     padding: 0.5em;
-    text-decoration: none;
-    color: black;
+    color: $gray-dark;
     font-weight: bold;
-    &:hover {
-      color: $orange;
-      background-color: $gray-medium;
-    }
   }
 }
 
