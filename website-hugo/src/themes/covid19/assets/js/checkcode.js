@@ -6,7 +6,7 @@ function trackEvent(action,name,value) {
 
 function checkCode(){
     let token = document.getElementById('token').value;
-    if (token.length == 0) {
+    if (token.length != 6) {
         document.getElementById('checking').innerHTML = '{{ i18n "fail_code_not_valid" }}'
         trackEvent('click','valid', false);
         return;

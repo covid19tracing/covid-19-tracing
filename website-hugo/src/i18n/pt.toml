@@ -126,6 +126,9 @@ other = "Verificando..."
 [no_match]
 other = "Baseado na informação que temos actualmente, não esteve em nenhuma área infectada. No entanto, isto pode mudar já que todos os dias recebemos dados novos."
 
+[disclaimer]
+other = "Tenha em atenção que nós não pertencemos a nenhuma organização oficial de saúde ou estatal pelo que deve sempre seguir as indicações dadas pelos canais oficiais"
+
 #####################################
 # Footer
 #####################################

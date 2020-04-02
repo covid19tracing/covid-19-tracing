@@ -22,7 +22,9 @@
                 </a>
             </div>
         </div>
-
+    <div class="disclaimer">
+        *<b>{{ i18n "disclaimer" }}</b>
+    </div>
     </div>
 
 {{ $js := resources.Get "js/checkcode.js" | resources.ExecuteAsTemplate  (printf "%s/js/checkcode.js" $.Site.Language ) . | resources.Minify | fingerprint }}

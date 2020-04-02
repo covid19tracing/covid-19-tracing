@@ -316,6 +316,8 @@ footer {
 
     .question {
 
+      margin-top: 1em;
+
       &> label {
         line-height: 150%;
       }
@@ -334,6 +336,11 @@ footer {
       }
     }
 
+  }
+
+  .disclaimer{
+    margin-top: 20px;
+    font-size: small;
   }
 
   button {
