@@ -124,7 +124,7 @@ other = "Gerar um novo código"
 other = "Verificando..."
 
 [no_match]
-other = "Baseado na informação que temo actualmente, não esteve em numa área com probabilidade de infecção. No entanto, isto pode mudar já que todos os dias recebemos dados novos."
+other = "Baseado na informação que temos actualmente, não esteve em nenhuma área infectada. No entanto, isto pode mudar já que todos os dias recebemos dados novos."
 
 #####################################
 # Footer
