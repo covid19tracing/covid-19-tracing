@@ -19,7 +19,7 @@ settings = {
     'coordinate_accuracy': 7,
     'coordinate_cluster_accuracy': 3,
     'coordinate_output_accuracy': 5,
-    'analyzeWindowDays': 30
+    'analyzeWindowDays': 15
 }
 datadir = os.path.abspath("./datafiles/")
 files = [os.path.join(datadir,x) for x in os.listdir(datadir) if x.endswith(".json")]
