@@ -5,7 +5,7 @@
 <div class="banner-container" style="background-image: url({{ $banner.Permalink }});">
     <div class="subtitle">{{ i18n "small_banner_title" }}</div>
     <div class="title">COVID-19 Tracing</div>
-    <div class="menu"><a href="/map">{{ i18n "open_map" }}</a></div>
+    <div class="menu"><a href="{{ .Site.LanguagePrefix }}/map">{{ i18n "open_map" }}</a></div>
 </div>
 
 {{ partial "mailchimp.html" . }}
