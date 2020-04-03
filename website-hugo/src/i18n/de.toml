@@ -100,6 +100,36 @@ other = "Uuups, Symptome in der Zukunft? Bitte überprüfe das Datum."
 other = "Wir filtern deine Daten auf Standorte zwischen {0} und {1}"
 
 #####################################
+# CheckCode
+#####################################
+
+
+[have_i_been_infection_area]
+other = "Habe ich mich ein einem potentiell ansteckenden Gebiet befunden?"
+
+[insert_your_code]
+other = "Gib deinen Code hier ein um dies zu überprüfen"
+
+[check]
+other = "Überprüfen"
+
+[not_have_code]
+other = "Du hast noch keinen Code?"
+
+[contribute]
+other = "Teile deine Daten anonym hier und erhalte einen Code"
+
+[checking]
+other = "Überprüfe..."
+
+[no_match]
+other = "Auf unseren aktuellen Daten basierend, konnten wir nicht feststellen, dass du dich in einer potentiell ansteckenden Zone befunden hast. Wir versuchen ständig unsere Datenbasis zu erweitern, das Ergebnis kann sich daher in Zukunft verändern."
+
+[disclaimer]
+other = "Bitte beachte, dass wir weder eine staatliche oder offizielle Gesundheitsorganisation sind. Bitte beachte und folge immer den Anweisungen und Empfehlungen der offiziellen Kanäle und Organisationen."
+
+
+#####################################
 # Footer
 #####################################
 

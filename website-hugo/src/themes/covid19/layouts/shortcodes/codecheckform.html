@@ -1,0 +1,28 @@
+<div id="codecheckform" class="checkcode">
+    <label>{{ i18n "have_i_been_infection_area" }}</label>
+
+    <div class="question">
+        <label for="token">{{ i18n "insert_your_code" }}</label>
+        <div class="checkform">
+            <input type="text" id="token" name="token" value="" class="tokenfield">
+            <button onclick="checkCode()">{{ i18n "check" }}</button>
+        </div>
+        <div id="checking" class="infobox hidden"></div>
+    </div>
+
+    <div>
+        {{ i18n "not_have_code" }}
+        <div>
+            <a href="{{ .Site.LanguagePrefix }}/newcase">
+                {{ i18n "contribute" }}
+            </a>
+        </div>
+    </div>
+    <div class="disclaimer">
+        *<b>{{ i18n "disclaimer" }}</b>
+    </div>
+
+{{ $js := resources.Get "js/checkcode.js" | resources.ExecuteAsTemplate  (printf "%s/js/checkcode.js" $.Site.Language ) . | resources.Minify | fingerprint }}
+<script src="{{ $js.Permalink }}"></script>
+
+</div>

@@ -5,15 +5,9 @@ draft: false
 slug: map
 ---
 
+{{< codecheckform >}}
+
 # Mapa do movimento da população nos últimos dias
-
-<div class="contribution">
-
-Contribua anonimamente com os seus dados e ajude-nos a fazer deste mapa uma ferramenta essencial no combate ao COVID-19
-
-[Quero Contribuir](/pt/newcase)
-
-</div>
 
 *Um novo mapa será gerado diariamente*
 
@@ -27,3 +21,4 @@ Contribua anonimamente com os seus dados e ajude-nos a fazer deste mapa uma ferr
 ### <span style="color:#f0ea4b">⬤</span> Área moderadamente frequentada
 
 ### <span style="color:#6693d9">⬤</span> Área pouco frequentada
+

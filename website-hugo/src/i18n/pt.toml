@@ -105,6 +105,34 @@ other = "Inseriou uma data de sintomas no futuro?"
 other = "Vamos somente enviar a sua informação de localização pertencente às datas entre {0} e {1}"
 
 #####################################
+# CheckCode
+#####################################
+
+[have_i_been_infection_area]
+other = "Passei por uma área com probabilidade de contágio?"
+
+[insert_your_code]
+other = "Insira o seu código e verifique"
+
+[check]
+other = "verificar"
+
+[not_have_code]
+other = "Ainda não tem um código?"
+
+[contribute]
+other = "Gerar um novo código"
+
+[checking]
+other = "Verificando..."
+
+[no_match]
+other = "Baseado na informação que temos actualmente, não esteve em nenhuma área infectada. No entanto, isto pode mudar já que todos os dias recebemos dados novos."
+
+[disclaimer]
+other = "Tenha em atenção que nós não pertencemos a nenhuma organização oficial de saúde ou estatal pelo que deve sempre seguir as indicações dadas pelos canais oficiais"
+
+#####################################
 # Footer
 #####################################
 

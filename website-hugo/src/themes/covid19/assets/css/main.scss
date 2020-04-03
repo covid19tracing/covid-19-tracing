@@ -285,13 +285,47 @@ footer {
   width: inherit !important;
 }
 
-.contribution {
-  margin: auto;
+.checkcode {
+
   text-align: center;
-  max-width: 500px;
-  border: 1px solid $gray-dark;
-  padding: 1em;
+  padding: 0.5em;
+  border: 1px $gray-lightest solid;
   a {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 0.5em;
+    color: $gray-dark;
+    font-weight: bold;
+  }
+
+  label {
+    padding: 0.5em;
+  }
+
+  .checkform {
+    padding: 1em;
+  }
+
+  .tokenfield {
+    width: 100px;
+  }
+
+  > label {
+    display: block;
+    font-size: 130%;
+  }
+
+  .infobox {
+    padding: 1em;
+    font-weight: bold;
+  }
+
+  .disclaimer{
+    margin-top: 20px;
+    font-size: small;
+  }
+
+  button {
     display: inline-block;
     border: 1px solid $orange;
     background-color: $orange;
@@ -300,12 +334,14 @@ footer {
     text-decoration: none;
     color: black;
     font-weight: bold;
+    cursor: pointer;
     &:hover {
       color: $orange;
       background-color: $gray-medium;
     }
   }
 }
+
 
 .logo {
   max-height: 36px;
