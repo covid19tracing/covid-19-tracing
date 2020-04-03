@@ -105,28 +105,28 @@ other = "Wir filtern deine Daten auf Standorte zwischen {0} und {1}"
 
 
 [have_i_been_infection_area]
-other = "Have I been in a potential infected area?"
+other = "Habe ich mich ein einem potentiell ansteckenden Gebiet befunden?"
 
 [insert_your_code]
-other = "Insert your code here and find out"
+other = "Gib deinen Code hier ein um dies zu überprüfen"
 
 [check]
-other = "check"
+other = "Überprüfen"
 
 [not_have_code]
-other = "Don't have a code yet?"
+other = "Du hast noch keinen Code?"
 
 [contribute]
-other = "Contribute with your anonymized data and get one"
+other = "Teile deine Daten anonym hier und erhalte einen Code"
 
 [checking]
-other = "Checking..."
+other = "Überprüfe..."
 
 [no_match]
-other = "Based on the current data, we could not identify that you have visited any infectous areas. Since we are gathering more data this result might change..."
+other = "Auf unseren aktuellen Daten basierend, konnten wir nicht feststellen, dass du dich in einer potentiell ansteckenden Zone befunden hast. Wir versuchen ständig unsere Datenbasis zu erweitern, das Ergebnis kann sich daher in Zukunft verändern."
 
 [disclaimer]
-other = "Be aware that we are neither a state or health association and you should always follow the guidelines provided by the official channels."
+other = "Bitte beachte, dass wir weder eine staatliche oder offizielle Gesundheitsorganisation sind. Bitte beachte und folge immer den Anweisungen und Empfehlungen der offiziellen Kanäle und Organisationen."
 
 
 #####################################

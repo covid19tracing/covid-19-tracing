@@ -5,10 +5,7 @@ draft: false
 slug: map
 ---
 
-<div class="contribution">
 {{< codecheckform >}}
-
-</div>
 
 # Mapa do movimento da população nos últimos dias
 

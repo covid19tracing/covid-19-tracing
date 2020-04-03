@@ -104,7 +104,7 @@ other = "We will filter the data on your computer and ONLY upload data between {
 #####################################
 
 [have_i_been_infection_area]
-other = "Have I been in a potential infected area?"
+other = "Have I been in a potential infectious area?"
 
 [insert_your_code]
 other = "Insert your code here and find out"
@@ -116,7 +116,7 @@ other = "check"
 other = "Don't have a code yet?"
 
 [contribute]
-other = "Contribute with your anonymized data and get one"
+other = "Contribute with your anonymized data and get a code"
 
 [checking]
 other = "Checking..."

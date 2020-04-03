@@ -5,10 +5,7 @@ draft: false
 slug: map
 ---
 
-<div class="contribution">
 {{< codecheckform >}}
-
-</div>
 
 # Hotspots Karte von Bewegungen in den letzten 5 Tagen
 

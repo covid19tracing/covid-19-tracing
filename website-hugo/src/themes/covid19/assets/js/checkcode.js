@@ -6,14 +6,16 @@ function trackEvent(action,name,value) {
 
 function checkCode(){
     let token = document.getElementById('token').value;
+    let infoBox = document.getElementById('checking');
+    infoBox.classList.remove("hidden");
     if (token.length != 6) {
-        document.getElementById('checking').innerHTML = '{{ i18n "fail_code_not_valid" }}'
+        infoBox.innerHTML = '{{ i18n "fail_code_not_valid" }}'
         trackEvent('click','valid', false);
-        return;
+    } else {
+        trackEvent('click','valid', true);
+        infoBox.innerHTML = '{{ i18n "checking" }}'
+        setTimeout(function() {
+            infoBox.innerHTML = '{{ i18n "no_match" }}'
+        }, 1000);
     }
-    trackEvent('click','valid', true);
-    document.getElementById('checking').innerHTML = '{{ i18n "checking" }}'
-    setTimeout(function() {
-        document.getElementById('checking').innerHTML = '{{ i18n "no_match" }}'
-    }, 1000);
 }

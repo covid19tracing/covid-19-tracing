@@ -1,30 +1,25 @@
 <div id="codecheckform" class="checkcode">
+    <label>{{ i18n "have_i_been_infection_area" }}</label>
 
-    <div class="questionblock">
-        <label>{{ i18n "have_i_been_infection_area" }}</label>
-
-        <div class="question">
-            <label for="token">{{ i18n "insert_your_code" }}</label>
-            <div class="options">
-                <p>
-                    <input type="text" id="token" name="token" value="">
-                    <button onclick="checkCode()">{{ i18n "check" }}</button>
-                </p>
-            </div>
-            <div class="options" id="checking"></div>
+    <div class="question">
+        <label for="token">{{ i18n "insert_your_code" }}</label>
+        <div class="checkform">
+            <input type="text" id="token" name="token" value="" class="tokenfield">
+            <button onclick="checkCode()">{{ i18n "check" }}</button>
         </div>
+        <div id="checking" class="infobox hidden"></div>
+    </div>
 
-        <div class="question">
-            {{ i18n "not_have_code" }}
-            <div>
-                <a href="{{ .Site.LanguagePrefix }}/newcase">
-                    {{ i18n "contribute" }}
-                </a>
-            </div>
+    <div>
+        {{ i18n "not_have_code" }}
+        <div>
+            <a href="{{ .Site.LanguagePrefix }}/newcase">
+                {{ i18n "contribute" }}
+            </a>
         </div>
+    </div>
     <div class="disclaimer">
         *<b>{{ i18n "disclaimer" }}</b>
-    </div>
     </div>
 
 {{ $js := resources.Get "js/checkcode.js" | resources.ExecuteAsTemplate  (printf "%s/js/checkcode.js" $.Site.Language ) . | resources.Minify | fingerprint }}
