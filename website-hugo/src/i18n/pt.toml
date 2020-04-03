@@ -114,6 +114,9 @@ other = "Passei por uma área com probabilidade de contágio?"
 [insert_your_code]
 other = "Insira o seu código e verifique"
 
+[check]
+other = "verificar"
+
 [not_have_code]
 other = "Ainda não tem um código?"
 

@@ -109,6 +109,9 @@ other = "Have I been in a potential infected area?"
 [insert_your_code]
 other = "Insert your code here and find out"
 
+[check]
+other = "check"
+
 [not_have_code]
 other = "Don't have a code yet?"
 
