@@ -16,10 +16,16 @@ datasync: ## download all new json data files
 map: ## create the map based on all json files
 	python3 GenerateMap.py
 
-.PHONY: deploy 
-deploy: ## copy heatmap to hugo live server
+.PHONY: copymap2hugo 
+copymap2hugo: ## copy heatmap to hugo live server
 	cp heatmap.html $(MAPHUGO)
 
 .PHONY: jupiter2python 
 jupiter2python: ## convert jupiter file to python file
 	jupyter nbconvert --to script *.ipynb
+
+.PHONY: deploy 
+deploy: datasync map copymap2hugo ## fetch data, generate and deploy map
+	git add $(MAPHUGO)
+	git commit -m "map generated and updated"
+	git push
