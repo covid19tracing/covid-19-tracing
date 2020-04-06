@@ -70,8 +70,7 @@
     <div class="questionblock">
         <h2>Location History</h2>
         <label>
-            Use your location file
-            <span class="small">(<a href="{{ .Site.LanguagePrefix }}/howto" target="_blank">{{ i18n "see_step_guide" }}</a>)</span>
+            Use your <a href="{{ .Site.LanguagePrefix }}/howto" target="_blank">google location file</a> (recommended)
         </label>
         <div class="question">
             <label for="file">{{ i18n "select_location_file" }} <b>Location History.json</b></label>
@@ -82,7 +81,11 @@
         </div>
 
         <label>
-            Select the places you visited in the past 15 days
+            <b>OR</b>
+        </label>
+
+        <label>
+            Manually select the places you visited in the past 15 days
         </label>
         <div id="mapid" style="width:auto;height:500px;"></div>
     </div>
