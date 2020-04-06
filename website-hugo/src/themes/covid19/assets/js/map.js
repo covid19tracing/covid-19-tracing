@@ -1,4 +1,6 @@
 var mymap = L.map('mapid').setView([38.7436214, -9.1953085], 13);
+var markers = {};
+var locationHistory = []
 var accessToken = "pk.eyJ1IjoidGlhZ29yYmYiLCJhIjoiY2s4bmUybTRoMDg1bDNsbHZxNjZtZWVubCJ9.2E1KHgavQ9HeTV_aoTxGRw";
     
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + accessToken, {
@@ -11,7 +13,6 @@ var accessToken = "pk.eyJ1IjoidGlhZ29yYmYiLCJhIjoiY2s4bmUybTRoMDg1bDNsbHZxNjZtZW
 }).addTo(mymap);
 
 var searchControl = new L.esri.Controls.Geosearch().addTo(mymap);
-
 var results = new L.LayerGroup().addTo(mymap);
 
 searchControl.on('results', function(data){
@@ -21,7 +22,7 @@ searchControl.on('results', function(data){
     }
 });
 
-var markers = {};
+mymap.on('click', onMapClick);
 
 function onMapClick(e) {
     var mp = new L.Marker([e.latlng.lat, e.latlng.lng]).addTo(mymap);
@@ -34,12 +35,13 @@ function removeMarker(e){
     delete markers[parseInt(e)];
 }
 
-mymap.on('click', onMapClick);
-
-var locationHistory = []
 function sendCoordinates(){
     for (var key of Object.keys(markers)) {
+        coordinates = {
+            "timestamp": Date.now(),
+            "lat": markers[key].getLat(),
+            "long": markers[key].getLng()
+        }
         locationHistory.push(markers[key].getLatLng())
     }
-    alert("coordinates sent")
 }
