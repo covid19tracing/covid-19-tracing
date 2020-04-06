@@ -21,10 +21,7 @@ crossorigin=""></script>
 <script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.js"></script>
 
 {{ $js := resources.Get "js/covid.js" | resources.ExecuteAsTemplate  (printf "%s/js/covid.js" $.Site.Language ) . | resources.Minify | fingerprint }}
-{{ $jsMap := resources.Get "js/map.js" | resources.ExecuteAsTemplate  (printf "%s/js/map.js" $.Site.Language ) . | resources.Minify | fingerprint }}
 
 <script src="{{ $js.Permalink }}"></script>
-
-<script src="{{ $jsMap.Permalink }}"></script>
 
 {{ end }}
