@@ -55,7 +55,7 @@ other = "Hochladen"
 other = "Google-Datei"
 
 [manual_select_location]
-other = "Wählen Sie die Orte aus, die Sie in den letzten 15 Tagen besucht haben"
+other = "Wähle die Orte aus, die du in den letzten 15 Tagen besucht hast"
 
 [see_step_guide]
 other = "siehe auch unsere Schritt für Schritt Anleitung zum Download der Daten bei Google"
@@ -67,7 +67,7 @@ other = "Wähle die Google Takeout Datei aus"
 other = "Entfernen"
 
 [send_form]
-other = "Daten Einreichen"
+other = "Daten hochladen"
 
 [save_token]
 other = "Bitte schreibe dir diesen Code auf"
