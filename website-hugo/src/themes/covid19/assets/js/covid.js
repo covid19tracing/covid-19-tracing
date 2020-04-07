@@ -17,7 +17,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'your.mapbox.access.token'
 }).addTo(mymap);
 
-var searchControl = new L.esri.Controls.Geosearch().addTo(mymap);
+var searchControl = new L.esri.Controls.Geosearch({'expanded': true}).addTo(mymap);
 var results = new L.LayerGroup().addTo(mymap);
 
 searchControl.on('results', function(data){
