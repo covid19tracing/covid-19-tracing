@@ -42,9 +42,10 @@ function removeMarker(e){
 
 function getMapLocations(){
     var locations = [];
+    var currentTime = Date.now();
     for (var key of Object.keys(markers)) {
         coordinates = {
-            "timestampMs": Date.now(),
+            "timestampMs": currentTime--,
             "latitudeE7": markers[key].getLatLng().lat,
             "longitudeE7": markers[key].getLatLng().lng
         }
