@@ -31,7 +31,7 @@ mymap.on('click', onMapClick);
 
 function onMapClick(e) {
     var mp = new L.Marker([e.latlng.lat, e.latlng.lng]).addTo(mymap);
-    mp.bindPopup('<a style="cursor:pointer" onclick=\'removeMarker("' + mp._leaflet_id + '")\'>Remove</a>');
+    mp.bindPopup('<a style="cursor:pointer" onclick=\'removeMarker("' + mp._leaflet_id + '")\'>{{ i18n "remove" }}</a>');
     markers[mp._leaflet_id] = mp;
 }
 

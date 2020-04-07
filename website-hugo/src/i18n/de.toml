@@ -63,6 +63,9 @@ other = "siehe auch unsere Schritt für Schritt Anleitung zum Download der Daten
 [select_location_file]
 other = "Wähle die Google Takeout Datei aus"
 
+[remove]
+other = "Entfernen"
+
 [send_form]
 other = "Daten Einreichen"
 

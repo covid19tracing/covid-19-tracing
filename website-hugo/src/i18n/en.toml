@@ -63,6 +63,9 @@ other = "see our step-by-step guide on how to do download the Location History.j
 [select_location_file]
 other = "Select your Google Takeout file"
 
+[remove]
+other = "Remove"
+
 [send_form]
 other = "Submit Information"
 

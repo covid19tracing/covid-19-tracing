@@ -63,6 +63,9 @@ other = "veja o nosso guia de como fazer o download do seu ficheiro de localiza√
 [select_location_file]
 other = "Selecione o seu ficheiro do Google Takeout com o nome"
 
+[remove]
+other = "Remover"
+
 [send_form]
 other = "Submeter Formul√°rio"
 
