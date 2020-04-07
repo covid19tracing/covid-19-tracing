@@ -4,7 +4,7 @@ var startDate = new Date();
 var endDate = new Date();
 var formState = {};
 
-var mymap = L.map('mapid').setView([38.7436214, -9.1953085], 13);
+var mymap = L.map('mapid').setView([47, 11], 5);
 var markers = {};
 var accessToken = "pk.eyJ1IjoidGlhZ29yYmYiLCJhIjoiY2s4bmUybTRoMDg1bDNsbHZxNjZtZWVubCJ9.2E1KHgavQ9HeTV_aoTxGRw";
     
@@ -23,7 +23,7 @@ var results = new L.LayerGroup().addTo(mymap);
 searchControl.on('results', function(data){
     results.clearLayers();
     for (var i = data.results.length - 1; i >= 0; i--) {
-        mymap.setView(data.results[i].latlng, 8);
+        mymap.setView(data.results[i].latlng, 13);
     }
 });
 
@@ -44,9 +44,9 @@ function getMapLocations(){
     var locations = [];
     for (var key of Object.keys(markers)) {
         coordinates = {
-            "timestamp": Date.now(),
-            "lat": markers[key].getLatLng().lat,
-            "long": markers[key].getLatLng().lng
+            "timestampMs": Date.now(),
+            "latitudeE7": markers[key].getLatLng().lat,
+            "longitudeE7": markers[key].getLatLng().lng
         }
         locations.push(coordinates)
     }

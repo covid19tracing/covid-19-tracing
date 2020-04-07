@@ -39,6 +39,24 @@ other = "Wann hattest du die ersten Symptome?"
 [in_contact_with_positive_covid]
 other = "Warst du in den letzten 15 Tagen in Kontakt mit Personen, die COVID-19 positiv waren?"
 
+[location_history]
+other = "Standortverlauf"
+
+[recommended]
+other = "empfohlen"
+
+[method]
+other = "Methode"
+
+[upload_your]
+other = "Hochladen"
+
+[google_location_file]
+other = "Google-Datei"
+
+[manual_select_location]
+other = "Wählen Sie die Orte aus, die Sie in den letzten 15 Tagen besucht haben"
+
 [see_step_guide]
 other = "siehe auch unsere Schritt für Schritt Anleitung zum Download der Daten bei Google"
 
@@ -46,7 +64,7 @@ other = "siehe auch unsere Schritt für Schritt Anleitung zum Download der Daten
 other = "Wähle die Google Takeout Datei aus"
 
 [send_form]
-other = "Finaler Schritt: Klicke hier um deine Daten hochzuladen und mit covid19tracing.org zu teilen."
+other = "Daten Einreichen"
 
 [save_token]
 other = "Bitte schreibe dir diesen Code auf"
@@ -139,6 +157,8 @@ other = "Unterstützt und empfohlen von"
 #####################################
 # General
 #####################################
+[or]
+other = "oder"
 
 [newsletter_msg]
 other = "Projektnewsletter: Wir informieren dich, sobald wir Neuigkeiten haben."
