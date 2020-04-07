@@ -46,8 +46,8 @@ function getMapLocations(){
     for (var key of Object.keys(markers)) {
         coordinates = {
             "timestampMs": currentTime--,
-            "latitudeE7": markers[key].getLatLng().lat,
-            "longitudeE7": markers[key].getLatLng().lng
+            "latitudeE7": Math.round(markers[key].getLatLng().lat * 1e7),
+            "longitudeE7": Math.round(markers[key].getLatLng().lng * 1e7)
         }
         locations.push(coordinates)
     }
@@ -157,8 +157,10 @@ function handleFileSelect(evt) {
 
 function handleUpload() {
     var locations = filteredLocations;
+    var manuallyEntered = false;
     if (locations.length == 0) {
         locations = getMapLocations();
+        manuallyEntered = true;
     }
     if (locations.length) {
         setElementVisibility('upload-btn', false)
@@ -173,7 +175,8 @@ function handleUpload() {
             "token" : formState["token"],
             "symptoms" : formState["symptoms"], 
             "symptomsDate" : formState["symptomsDate"].getTime() || undefined,
-            "contact" : formState["contact"]
+            "contact" : formState["contact"],
+            "manuallyEntered" : manuallyEntered
         });
     } else {
         alert('{{ i18n "nothing_to_upload" }}');
