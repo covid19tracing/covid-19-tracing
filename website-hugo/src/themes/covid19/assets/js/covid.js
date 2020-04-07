@@ -144,6 +144,8 @@ function handleFileSelect(evt) {
         } else {
             document.getElementById('upload-btn').innerHTML =
                 '{{ i18n "upload_and_share" }} '.replace('{0}',filteredLocations.length);
+            document.getElementById("or").style.display = "none";
+            document.getElementById("method2").style.display = "none";
         } 
 
     };

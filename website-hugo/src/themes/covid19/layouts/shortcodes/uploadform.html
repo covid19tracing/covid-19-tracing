@@ -69,25 +69,29 @@
 
     <div class="questionblock">
         <h2>{{ i18n "location_history" }}</h2>
-        <label>
-            {{ i18n "method" }} 1: {{ i18n "upload_your" }} <a href="{{ .Site.LanguagePrefix }}/howto" target="_blank">{{ i18n "google_location_file" }}</a> ({{ i18n "recommended" }})
-        </label>
-        <div class="question">
-            <label for="file">{{ i18n "select_location_file" }} <b>Location History.json</b></label>
-            <div class="options">
-                <input class="form-control" type="file" id="file" name="file">
+        <div class="questionblock" id="method1">
+            <label>
+                {{ i18n "method" }} 1: {{ i18n "upload_your" }} <a href="{{ .Site.LanguagePrefix }}/howto" target="_blank">{{ i18n "google_location_file" }}</a> ({{ i18n "recommended" }})
+            </label>
+            <div class="question">
+                <label for="file">{{ i18n "select_location_file" }} <b>Location History.json</b></label>
+                <div class="options">
+                    <input class="form-control" type="file" id="file" name="file">
+                </div>
+                <p id="datafilterinformation"></p>
             </div>
-            <p id="datafilterinformation"></p>
+
         </div>
 
-        <label>
+        <label id="or">
             <b>{{ i18n "or" }}</b>
         </label>
-
-        <label>
-            Method 2: {{ i18n "manual_select_location" }}
-        </label>
-        <div id="mapid" style="width:auto;height:500px;"></div>
+        <div class="questionblock" id="method2">
+            <label>
+                Method 2: {{ i18n "manual_select_location" }}
+            </label>
+            <div id="mapid" style="width:auto;height:500px;"></div>
+        </div>
     </div>
 
     <div class="questionblock hidden" id="response">
