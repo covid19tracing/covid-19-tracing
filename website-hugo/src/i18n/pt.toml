@@ -39,14 +39,35 @@ other = "Quando sentiu os primeiros sintomas?"
 [in_contact_with_positive_covid]
 other = "Teve em contacto com alguém confirmado COVID-19 positivo nos ultimos 15 dias?"
 
+[location_history]
+other = "Histórico de Localização"
+
+[recommended]
+other = "recomendado"
+
+[method]
+other = "Método"
+
+[upload_your]
+other = "Use o seu"
+
+[google_location_file]
+other = "ficheiro de localização do google"
+
+[manual_select_location]
+other = "Selecione os locais que visitou nos ultimos 15 dias"
+
 [see_step_guide]
 other = "veja o nosso guia de como fazer o download do seu ficheiro de localização do Google"
 
 [select_location_file]
 other = "Selecione o seu ficheiro do Google Takeout com o nome"
 
+[remove]
+other = "Remover"
+
 [send_form]
-other = "Passo Final: Clique aqui para enviar a sua informação filtrada para o nosso serviço"
+other = "Submeter Formulário"
 
 [save_token]
 other = "Por favor guarde este código"
@@ -142,6 +163,8 @@ other = "Apoiado e Recomendado por"
 #####################################
 # General
 #####################################
+[or]
+other = "ou"
 
 [newsletter_msg]
 other = "Acompanhe o nosso projecto. Enviamos email se tivermos novidades"

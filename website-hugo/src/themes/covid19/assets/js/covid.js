@@ -4,6 +4,56 @@ var startDate = new Date();
 var endDate = new Date();
 var formState = {};
 
+var mymap = L.map('mapid').setView([47, 11], 5);
+var markers = {};
+var accessToken = "pk.eyJ1IjoidGlhZ29yYmYiLCJhIjoiY2s4bmUybTRoMDg1bDNsbHZxNjZtZWVubCJ9.2E1KHgavQ9HeTV_aoTxGRw";
+    
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + accessToken, {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'your.mapbox.access.token'
+}).addTo(mymap);
+
+var searchControl = new L.esri.Controls.Geosearch().addTo(mymap);
+var results = new L.LayerGroup().addTo(mymap);
+
+searchControl.on('results', function(data){
+    results.clearLayers();
+    for (var i = data.results.length - 1; i >= 0; i--) {
+        mymap.setView(data.results[i].latlng, 13);
+    }
+});
+
+mymap.on('click', onMapClick);
+
+function onMapClick(e) {
+    var mp = new L.Marker([e.latlng.lat, e.latlng.lng]).addTo(mymap);
+    mp.bindPopup('<a style="cursor:pointer" onclick=\'removeMarker("' + mp._leaflet_id + '")\'>{{ i18n "remove" }}</a>');
+    markers[mp._leaflet_id] = mp;
+}
+
+function removeMarker(e){
+    mymap.removeLayer(markers[e]);
+    delete markers[parseInt(e)];
+}
+
+function getMapLocations(){
+    var locations = [];
+    var currentTime = Date.now();
+    for (var key of Object.keys(markers)) {
+        coordinates = {
+            "timestampMs": currentTime--,
+            "latitudeE7": Math.round(markers[key].getLatLng().lat * 1e7),
+            "longitudeE7": Math.round(markers[key].getLatLng().lng * 1e7)
+        }
+        locations.push(coordinates)
+    }
+    return locations;
+}
+
 function trackEvent(action,name,value) {
     if (_paq && _paq.push) {
         _paq.push(['trackEvent', 'upload', action, name, value]);
@@ -95,6 +145,8 @@ function handleFileSelect(evt) {
         } else {
             document.getElementById('upload-btn').innerHTML =
                 '{{ i18n "upload_and_share" }} '.replace('{0}',filteredLocations.length);
+            document.getElementById("or").style.display = "none";
+            document.getElementById("method2").style.display = "none";
         } 
 
     };
@@ -104,20 +156,27 @@ function handleFileSelect(evt) {
 }
 
 function handleUpload() {
-    if (filteredLocations.length) {
+    var locations = filteredLocations;
+    var manuallyEntered = false;
+    if (locations.length == 0) {
+        locations = getMapLocations();
+        manuallyEntered = true;
+    }
+    if (locations.length) {
         setElementVisibility('upload-btn', false)
         showArea("response");
         showInformation('uploadstatus','{{ i18n "uploading" }}');
 
         sendData({
-            "locations": filteredLocations,
+            "locations": locations,
             "tested" : formState["tested"],
             "testedDate" : formState["testedDate"].getTime() || undefined,
             "positive" : formState["positive"],
             "token" : formState["token"],
             "symptoms" : formState["symptoms"], 
             "symptomsDate" : formState["symptomsDate"].getTime() || undefined,
-            "contact" : formState["contact"]
+            "contact" : formState["contact"],
+            "manuallyEntered" : manuallyEntered
         });
     } else {
         alert('{{ i18n "nothing_to_upload" }}');
