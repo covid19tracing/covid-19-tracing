@@ -1,5 +1,7 @@
 # covid-19-tracing
 
+# This project is discontinued. Feel free to use it and drop us a message in case you have a question or comment.
+
 ## Static Website
 
 Based on hugo, hosted on netlify. go to `website-hugo` and run the following commands:
